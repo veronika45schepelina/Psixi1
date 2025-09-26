@@ -1,5 +1,4 @@
 
-
 ```html
 <!DOCTYPE html>
 <html lang="ru">
@@ -7,98 +6,86 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Центр супервизоров.рф</title>
+    <!-- Отображение на телефонах-->
+    <title>Центр психологов.рф</title>
+    <!-- титульник сайта-->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
+    <!--Подключение шрифтов-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!--Подключение иконок-->
     <style>
         :root {
-            --primary: #A88DC0;
-            --primary-light: #B4A9D2;
-            --primary-dark: #CDC7E3;
-            --secondary: #E4D6E9;
-            --accent: #F6EAF3;
-            --text: #4A4A4A;
-            --text-light: #6A6A6A;
-            --background: #FFFFFF;
-            --background-alt: #F6EAF3;
-            --card: #FFFFFF;
-            --shadow: rgba(168, 141, 192, 0.15);
+            --primary: #9bdcdd;
+            /* основной цвет*/
+            --primary-light: #9bdcdd;
+            /* светлый вариант основного цвета*/
+            --primary-dark: #9bdcdd;
+            /*темный вариант */
+            --secondary: #cbefef;
+            /*Вторичный цвет */
+            --accent: #cbefef;
+            --text: #0e4547;
+            --text-light: #03383a;
+            --background: #fbfcf6;
+            --background-alt: #c6e8e9d8;
+            --card: #ffffff;
+            --shadow: rgba(105, 178, 160, 0.15);
             --transition: all 0.3s ease;
-            --error: #E74C3C;
-            --success: #2ECC71;
-            --gradient-bg: linear-gradient(135deg, #F6EAF3 0%, #E4D6E9 50%, #CDC7E3 100%);
-            --glass-bg: rgba(255, 255, 255, 0.4);
-            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            --glass-border: 1px solid rgba(255, 255, 255, 0.18);
-            --widget-bg: #fff;
-            --widget-border: #ddd;
-            --neon-glow: 0 0 10px #A88DC0, 0 0 20px #A88DC0, 0 0 30px #A88DC0;
+            --error: #e74c3c;
+            --success: #2ecc71;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            /* Сброс стилей браузера */
         }
 
         body {
             font-family: "Inter", sans-serif;
-            background: var(--gradient-bg);
+            /* Шрифт */
+            background: var(--background);
             color: var(--text);
             line-height: 1.7;
+            /* Ширина шрифта */
             overflow-x: hidden;
-            position: relative;
+            /* Отвечает за отображение содержимого элемента по горизонтали */
         }
 
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(168, 141, 192, 0.1) 0%, rgba(168, 141, 192, 0) 70%);
-            z-index: -1;
-            animation: pulse-bg 10s infinite alternate;
-        }
-
-        @keyframes pulse-bg {
-            0% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        /* Улучшенная навигация с градиентом и тенью */
+        /* Навигация */
         .navbar {
             position: fixed;
+            /* Фиксация шапки */
             top: 0;
             left: 0;
             width: 100%;
+            /* Расширение на весь экран */
             display: flex;
+            /* Дисплей посредине */
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 5%;
-            background: linear-gradient(to right, var(--primary-light), var(--primary-dark));
-            backdrop-filter: blur(10px);
-            box-shadow: var(--glass-shadow);
-            border: var(--glass-border);
+            background: #3a8a8d;
+            /* Градиентный фон */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             z-index: 1000;
             transition: var(--transition);
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-        }
-
-        @keyframes neon-nav {
-            0% { box-shadow: var(--neon-glow); }
-            100% { box-shadow: none; }
         }
 
         .navbar.scrolled {
             padding: 0.8rem 5%;
-            background: var(--glass-bg);
+            background: #00868851;
+            /* Градиентный фон */
             backdrop-filter: blur(15px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --primary: #1a4848;
+            /* основной цвет*/
+            --primary-light: #1a4848;
+            /* светлый вариант основного цвета*/
+            --primary-dark: #1a4848;
         }
 
         .nav-left {
@@ -111,16 +98,7 @@
             font-family: "Raleway", sans-serif;
             font-weight: 600;
             font-size: 1.8rem;
-            color: #703f9b;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            color: var(--primary-dark);
         }
 
         .nav-right {
@@ -140,35 +118,8 @@
             align-items: center;
         }
 
-        .nav-item {
-            font-size: 1rem;
-            color: #5e288da8;
-            text-decoration: none;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-item::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #fff;
-            transition: var(--transition);
-        }
-
-        .nav-item:hover::after {
-            width: 100%;
-        }
-
-        .nav-item:hover {
-            color: #fff;
-        }
-
         .btn {
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             font-family: "Raleway", sans-serif;
             font-weight: 500;
@@ -178,78 +129,84 @@
             text-decoration: none;
             display: inline-block;
             text-align: center;
-            box-shadow: var(--shadow);
-            border: 1px solid transparent;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px var(--shadow);
         }
 
         .btn-login {
-            background: var(--accent);
+            background: transparent;
             color: var(--primary);
-            border: 1px solid var(--primary-light);
+            border: 2px solid var(--primary);
         }
 
         .btn-login:hover {
-            background: var(--primary-light);
-            color: #FFFFFF;
+            background: var(--primary);
+            color: #3a8a8d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
         }
 
         .btn-register {
             background: var(--primary);
-            color: #FFFFFF;
+            color: #179da1;
+            border: 2px solid var(--primary);
         }
 
         .btn-register:hover {
-            background: var(--primary-dark);
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            color: #3a8a8d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
         }
 
         .btn-info {
-            background: var(--secondary);
-            color: var(--text);
+            background: #3a8a8d;
+            color: white;
+            border: 2px solid #3a8a8d;
         }
 
         .btn-info:hover {
-            background: var(--primary-light);
-            color: #FFFFFF;
+            background: #46a5a8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
         }
 
         .menu-toggle {
             font-size: 1.7rem;
             cursor: pointer;
-            color: #fff;
+            color: var(--primary-dark);
             z-index: 1001;
             transition: transform 0.3s ease;
         }
 
         .menu-toggle:hover {
-            transform: rotate(90deg);
+            transform: scale(1.1);
         }
 
-        /* Мобильное меню */
+        /* Мобильное меню - справа */
         .mobile-menu {
             position: fixed;
             top: 0;
             right: -100%;
+            /* Изменено на right */
             width: 80%;
             max-width: 350px;
             height: 100vh;
-            background: var(--gradient-bg);
+            background: linear-gradient(135deg, var(--card) 0%, var(--accent) 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             padding-top: 5rem;
             box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+            /* Тень слева */
             transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Изменено на right */
             z-index: 999;
             border-left: 1px solid var(--secondary);
         }
 
         .mobile-menu.active {
             right: 0;
+            /* Активное состояние справа */
         }
 
         .mobile-menu .nav-item {
@@ -257,26 +214,42 @@
             padding: 1.2rem 2.5rem;
             width: 100%;
             text-align: center;
-            color: var(--primary);
-            transition: var(--transition);
+            color: #43a8a8;
+            transition: 0.3s ease, transform 0.3s ease;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateX(30px);
+            /* Анимация с права */
         }
 
         .mobile-menu.active .nav-item {
+            color: #1f9599;
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
 
-        .mobile-menu .nav-item:nth-child(1) { transition-delay: 0.05s; }
-        .mobile-menu .nav-item:nth-child(2) { transition-delay: 0.1s; }
-        .mobile-menu .nav-item:nth-child(3) { transition-delay: 0.15s; }
-        .mobile-menu .nav-item:nth-child(4) { transition-delay: 0.2s; }
-        .mobile-menu .nav-item:nth-child(5) { transition-delay: 0.25s; }
+        .mobile-menu .nav-item:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .mobile-menu .nav-item:nth-child(2) {
+            transition-delay: 0.05s;
+        }
+
+        .mobile-menu .nav-item:nth-child(3) {
+            transition-delay: 0.05s;
+        }
+
+        .mobile-menu .nav-item:nth-child(4) {
+            transition-delay: 0.05s;
+        }
+
+        .mobile-menu .nav-item:nth-child(5) {
+            transition-delay: 0.05s;
+        }
 
         .mobile-menu .nav-item:hover {
-            background: var(--accent);
-            transform: scale(1.05);
+            background: var(--primary-light);
+            transform: translateX(-5px);
         }
 
         .mobile-menu .nav-auth {
@@ -284,14 +257,14 @@
             padding: 1.5rem 2.5rem;
             gap: 1.2rem;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateX(30px);
             transition: opacity 0.3s ease, transform 0.3s ease;
             transition-delay: 0.35s;
         }
 
         .mobile-menu.active .nav-auth {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
 
         .mobile-menu .nav-logout {
@@ -299,14 +272,14 @@
             flex-direction: column;
             padding: 1.5rem 2.5rem;
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateX(30px);
             transition: opacity 0.3s ease, transform 0.3s ease;
             transition-delay: 0.35s;
         }
 
         .mobile-menu.active .nav-logout {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
 
         /* Overlay для мобильного меню */
@@ -351,24 +324,22 @@
         }
 
         .modal {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border-radius: 30px;
+            background: var(--card);
+            border-radius: 20px;
             padding: 2.5rem;
             width: 90%;
             max-width: 500px;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: var(--glass-shadow);
-            border: var(--glass-border);
-            transform: scale(0.9);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(30px);
             opacity: 0;
             transition: var(--transition);
             position: relative;
         }
 
         .modal-overlay.active .modal {
-            transform: scale(1);
+            transform: translateY(0);
             opacity: 1;
         }
 
@@ -397,7 +368,6 @@
 
         .modal-close:hover {
             color: var(--primary);
-            transform: rotate(90deg);
         }
 
         .modal-title {
@@ -407,7 +377,6 @@
             margin-bottom: 1.5rem;
             color: var(--text);
             text-align: center;
-            text-shadow: 0 2px 4px var(--shadow);
         }
 
         .form-group {
@@ -424,19 +393,17 @@
         .form-input {
             width: 100%;
             padding: 0.8rem 1.2rem;
-            border: var(--glass-border);
-            border-radius: 15px;
+            border: 2px solid var(--secondary);
+            border-radius: 10px;
             font-family: "Inter", sans-serif;
             font-size: 1rem;
             transition: var(--transition);
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
         }
 
         .form-input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(168, 141, 192, 0.2);
+            box-shadow: 0 0 0 3px rgba(155, 220, 221, 0.2);
         }
 
         .form-input.error {
@@ -464,35 +431,25 @@
             flex: 1;
             text-align: center;
             padding: 1rem;
-            border: var(--glass-border);
-            border-radius: 15px;
+            border: 2px solid var(--secondary);
+            border-radius: 10px;
             cursor: pointer;
             transition: var(--transition);
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
         }
 
         .role-option:hover {
             border-color: var(--primary-light);
-            transform: translateY(-5px);
         }
 
         .role-option.selected {
             border-color: var(--primary);
             background: var(--accent);
-            box-shadow: var(--glass-shadow);
         }
 
         .role-icon {
             font-size: 2rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
-            animation: bounce 1s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
         }
 
         .form-footer {
@@ -501,7 +458,7 @@
         }
 
         .form-link {
-            color: #8700ff;
+            color: var(--primary);
             text-decoration: none;
             cursor: pointer;
             transition: var(--transition);
@@ -516,12 +473,10 @@
             display: none;
             padding: 6rem 5% 4rem;
             min-height: 100vh;
-            background: var(--gradient-bg);
         }
 
         .dashboard-header {
             margin-bottom: 2.5rem;
-            text-align: center;
         }
 
         .dashboard-title {
@@ -530,7 +485,6 @@
             font-size: 2.2rem;
             color: var(--text);
             margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px var(--shadow);
         }
 
         .dashboard-subtitle {
@@ -544,27 +498,24 @@
             margin-bottom: 2rem;
             border-bottom: 2px solid var(--secondary);
             padding-bottom: 1rem;
-            justify-content: center;
         }
 
         .tab-btn {
             padding: 0.8rem 1.5rem;
-            background: var(--glass-bg);
-            border: var(--glass-border);
-            border-radius: 15px;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
             font-family: "Raleway", sans-serif;
             font-weight: 500;
             font-size: 1rem;
             color: var(--text-light);
             cursor: pointer;
             transition: var(--transition);
-            backdrop-filter: blur(5px);
         }
 
         .tab-btn.active {
             background: var(--primary);
-            color: #FFFFFF;
-            box-shadow: var(--glass-shadow);
+            color: white;
         }
 
         .tab-content {
@@ -578,13 +529,11 @@
 
         /* Поиск специалистов */
         .search-filters {
-            background: var(--glass-bg);
-            border-radius: 20px;
+            background: var(--card);
+            border-radius: 15px;
             padding: 1.5rem;
             margin-bottom: 2rem;
-            box-shadow: var(--glass-shadow);
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
 
         .filter-row {
@@ -601,23 +550,21 @@
         }
 
         .specialist-card {
-            background: var(--glass-bg);
-            border-radius: 20px;
+            background: var(--card);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--glass-shadow);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
         }
 
         .specialist-card:hover {
-            transform: translateY(-10px) rotate(1deg);
-            box-shadow: 0 15px 35px var(--shadow);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         .specialist-header {
             padding: 1.5rem;
-            background: var(--gradient-bg);
+            background: var(--accent);
             text-align: center;
         }
 
@@ -628,7 +575,6 @@
             object-fit: cover;
             margin-bottom: 1rem;
             border: 4px solid var(--card);
-            box-shadow: 0 4px 10px var(--shadow);
         }
 
         .specialist-name {
@@ -636,11 +582,10 @@
             font-weight: 600;
             font-size: 1.3rem;
             margin-bottom: 0.3rem;
-            color: #FFFFFF;
         }
 
         .specialist-specialty {
-            color: #FFFFFF;
+            color: var(--primary-dark);
             font-weight: 500;
         }
 
@@ -660,7 +605,7 @@
         }
 
         .rating-stars {
-            color: #FFD700;
+            color: #ffd700;
         }
 
         .specialist-price {
@@ -675,14 +620,12 @@
 
         /* Календарь */
         .calendar-container {
-            background: var(--glass-bg);
+            background: linear-gradient(135deg, var(--card) 0%, var(--accent) 100%);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: var(--glass-shadow);
+            box-shadow: 0 10px 40px var(--shadow);
             overflow: hidden;
             position: relative;
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
         }
 
         .calendar-header {
@@ -709,36 +652,49 @@
         .calendar-day {
             text-align: center;
             padding: 1rem;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
-            background: var(--glass-bg);
-            border: var(--glass-border);
+            background: var(--background-alt);
+            border: 1px solid var(--secondary);
             font-weight: 500;
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, background 0.3s ease;
         }
 
         .calendar-day:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             background: var(--primary-light);
-            color: #FFFFFF;
+            color: white;
         }
 
         .calendar-day.selected {
             background: var(--primary);
-            color: #FFFFFF;
-            box-shadow: 0 4px 15px rgba(168, 141, 192, 0.3);
+            color: white;
+            box-shadow: 0 4px 15px rgba(91, 170, 176, 0.3);
             animation: pulse 1s infinite;
         }
 
         .calendar-day.disabled {
-            color: #CCC;
+            color: #ccc;
             cursor: not-allowed;
         }
 
         .calendar-day.has-bookings {
-            background: var(--accent);
-            color: var(--primary-dark);
+            background: var(--background-alt);
+            color: #1a4547;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .time-slots {
@@ -751,28 +707,27 @@
         .time-slot {
             padding: 0.5rem;
             text-align: center;
-            border: var(--glass-border);
-            border-radius: 10px;
+            border: 1px solid var(--secondary);
+            border-radius: 8px;
             cursor: pointer;
-            background: var(--glass-bg);
-            transition: var(--transition);
+            background: var(--background-alt);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: fadeInUp 0.5s ease;
-            backdrop-filter: blur(5px);
         }
 
         .time-slot:hover {
             transform: translateY(-5px);
-            box-shadow: var(--glass-shadow);
+            box-shadow: 0 8px 20px var(--shadow);
         }
 
         .time-slot.selected {
             background: var(--primary);
-            color: #FFFFFF;
+            color: white;
             border-color: var(--primary);
         }
 
         .time-slot.booked {
-            background: linear-gradient(135deg, #FFCCCC 0%, #FFB3B3 100%);
+            background: linear-gradient(135deg, #ffcccc 0%, #ffb3b3 100%);
             color: var(--error);
             cursor: not-allowed;
             position: relative;
@@ -811,23 +766,21 @@
         }
 
         .client-card {
-            background: var(--glass-bg);
-            border-radius: 20px;
+            background: var(--card);
+            border-radius: 15px;
             padding: 1.5rem;
-            box-shadow: var(--glass-shadow);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             cursor: pointer;
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
         }
 
         .client-card:hover {
-            transform: translateY(-5px) rotate(1deg);
-            box-shadow: 0 15px 35px var(--shadow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .plan-card {
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
             border-left: 4px solid var(--primary);
         }
 
@@ -843,7 +796,6 @@
             height: 60px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 2px 5px var(--shadow);
         }
 
         .client-name {
@@ -878,13 +830,11 @@
 
         .client-detail {
             display: none;
-            background: var(--glass-bg);
+            background: var(--card);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: var(--glass-shadow);
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px var(--shadow);
         }
 
         .client-detail.active {
@@ -908,13 +858,11 @@
 
         /* Дневник клиента */
         .client-journal {
-            background: var(--glass-bg);
-            border-radius: 20px;
+            background: var(--card);
+            border-radius: 15px;
             padding: 1.5rem;
-            box-shadow: var(--glass-shadow);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             margin-bottom: 2rem;
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
         }
 
         .journal-entry {
@@ -934,20 +882,17 @@
             background: var(--accent);
             padding: 1rem;
             border-radius: 10px;
-            box-shadow: inset 0 2px 5px var(--shadow);
         }
 
         .journal-form textarea {
             width: 100%;
             min-height: 150px;
             padding: 1rem;
-            border: var(--glass-border);
-            border-radius: 15px;
+            border: 2px solid var(--secondary);
+            border-radius: 10px;
             font-family: "Inter", sans-serif;
             resize: vertical;
             transition: var(--transition);
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
         }
 
         .journal-form textarea:focus {
@@ -964,19 +909,17 @@
         }
 
         .notification {
-            background: var(--glass-bg);
-            border-radius: 15px;
+            background: var(--card);
+            border-radius: 10px;
             padding: 1rem 1.5rem;
             margin-bottom: 0.5rem;
-            box-shadow: var(--glass-shadow);
-            border: var(--glass-border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             gap: 0.8rem;
             transform: translateX(100%);
             opacity: 0;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
 
         .notification.show {
@@ -1002,8 +945,8 @@
         }
 
         .notification.new-appointment {
-            border-left: 4px solid #F39C12;
-            background: #FEF9E7;
+            border-left: 4px solid #f39c12;
+            background: #fef9e7;
         }
 
         .notification-icon {
@@ -1023,7 +966,7 @@
         }
 
         .notification.new-appointment .notification-icon {
-            color: #F39C12;
+            color: #f39c12;
         }
 
         /* Индикатор загрузки */
@@ -1077,15 +1020,19 @@
             }
         }
 
-        /* Герой секция с большой фото справа и дополнительным текстом */
+        /* Герой секция */
         .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            text-align: center;
             padding: 6rem 5% 4rem;
-            background: var(--gradient-bg);
+            background-image: url('file:///C:/Users/user/Downloads/Airbrush-Image-Enhancer-1758879784011%20(1).jpg'); /* Замените на URL вашей картинки с горами и деревьями */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             position: relative;
             overflow: hidden;
         }
@@ -1097,120 +1044,61 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCA4MDAgODAwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPHRpdGxlPkFydGJvYXJkIDFjb3B5PC90aXRsZT4KICAgIDxnIGlkPSJBcnRib2FyZCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkFydGJvYXJkLTFjb3B5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNTQuMDAwMDAwLCAtNTQuMDAwMDAwKSI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cC0zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NC4wMDAwMDAsIDU0LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIHJ4PSIxMDAiIHN0eWxlPSJmaWxsOiAjZjBmMGUwOyI+PC9yZWN0PgogICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDAuMDAwMDAwLCAxMDAuMDAwMDAwKSIgb3BhY2l0eT0iMC42Ij4KICAgICAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMiI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGlkPSJSZWN0YW5nbGUtMmNvcHktMyIgZD0iTTAgMCBMMTAwIDAgTDEwMCAxMDAgTDAgMTAwIEwwIDAgWiIgc3R5bGU9ImZpbGw6ICNmZmZmZmY7Ij48L3BhdGg+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGlkPSJSZWN0YW5nbGUtMmNvcHktMyIgZD0iTTAwIDAgTLEgMCAgTLEgMTAwIEwwIDEwMCBMMCAwIFoiIHN0eWxlPSJmaWxsOiAjZmZmZmZmOyI+PC9wYXRoPgogICAgICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+');
+            background: url("C:\Users\user\Downloads\Airbrush-Image-Enhancer-1758879784011 (1).jpg");
             background-size: cover;
             background-position: center;
             z-index: 0;
-            opacity: 0.3;
-            filter: blur(5px);
         }
 
         .hero-content {
-            max-width: 50%;
+            max-width: 1000px;
             position: relative;
             z-index: 1;
-            text-align: left;
-            animation: slideInLeft 1s ease;
-        }
-
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        .hero-image {
-            max-width: 190%;
-            height: auto;
-            border-radius: 50px;
-            margin-right: 0%;
-            object-fit: cover;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-image::after {
-            content: "Профессиональная поддержка и рост\\AВаше пространство для развития";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 1.5rem;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            white-space: pre-wrap;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            animation: fadeInText 2s ease-in-out;
-        }
-
-        @keyframes fadeInText {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes neon-glow {
-            0% { box-shadow: var(--neon-glow); }
-            100% { box-shadow: none; }
         }
 
         .hero-title {
             font-family: "Raleway", sans-serif;
-            font-weight: 700;
-            font-size: 3.5rem;
+            font-weight: 600;
+            font-size: 3.2rem;
             line-height: 1.2;
-            margin-bottom: 1rem;
-            color: #460c79bd;
-            text-shadow: 0 4px 8px var(--shadow);
-            animation: fadeInUp 1s ease;
+            margin-bottom: 1.5rem;
+            color: #c3fcff;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+
+        .hero-subtitle {
+            font-family: "Raleway", sans-serif;
+            font-weight: 400;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+
+        .divider {
+            width: 180px;
+            height: 6px;
+            background: var(--primary);
+            margin: 0 auto 2.5rem;
+            border-radius: 3px;
+            opacity: 0;
+            transform: scaleX(0);
+            animation: scaleIn 0.8s ease forwards 0.9s;
         }
 
         .hero-description {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            color: #a88dc0;
-            animation: fadeInUp 1s ease 0.5s forwards;
+            font-family: "Raleway", sans-serif;
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            color:  #a3feff;
             opacity: 0;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: flex-start;
-            gap: 2rem;
-            margin-bottom: 4rem;
-            animation: fadeInUp 1s ease 1s forwards;
-            opacity: 0;
-        }
-
-        .stat-item {
-            background: var(--glass-bg);
-            padding: 1rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            color: #6f4096;
-            box-shadow: var(--glass-shadow);
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        .stat-item:hover {
-            transform: scale(1.1);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .stat-label {
-            font-size: 1rem;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 1.2s;
         }
 
         /* Особенности */
@@ -1228,16 +1116,14 @@
         }
 
         .feature-card {
-            background: var(--glass-bg);
+            background: var(--card);
             border-radius: 20px;
             padding: 2.5rem 2rem;
             text-align: center;
-            box-shadow: var(--glass-shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             opacity: 0;
             transform: translateY(30px);
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
         }
 
         .feature-card.animate {
@@ -1253,7 +1139,7 @@
         }
 
         .feature-card:hover {
-            transform: translateY(-10px) rotate(2deg);
+            transform: translateY(-10px);
             box-shadow: 0 15px 35px var(--shadow);
         }
 
@@ -1261,7 +1147,6 @@
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
-            animation: bounce 1s infinite;
         }
 
         .feature-title {
@@ -1280,7 +1165,7 @@
         /* Секция помощи */
         .help {
             padding: 5rem 5%;
-            background: var(--gradient-bg);
+            background: var(--background-alt);
             position: relative;
         }
 
@@ -1291,11 +1176,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23E4D6E9' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23c8ebeb' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
             background-size: cover;
             background-position: center;
             z-index: 0;
-            opacity: 0.5;
         }
 
         .section-title {
@@ -1306,8 +1190,7 @@
             margin-bottom: 3.5rem;
             position: relative;
             z-index: 1;
-            color: #FFFFFF;
-            text-shadow: 0 4px 8px var(--shadow);
+            color: var(--text);
         }
 
         .section-title::after {
@@ -1318,7 +1201,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: #FFFFFF;
+            background: var(--primary);
             border-radius: 2px;
         }
 
@@ -1333,16 +1216,13 @@
         }
 
         .help-card {
-            background: var(--glass-bg);
+            background: var(--card);
             border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: var(--glass-shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             opacity: 0;
             transform: translateY(30px);
-            color: #FFFFFF;
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
         }
 
         .help-card.animate {
@@ -1366,7 +1246,7 @@
         }
 
         .help-card:hover {
-            transform: translateY(-5px) rotate(1deg);
+            transform: translateY(-5px);
             box-shadow: 0 15px 35px var(--shadow);
         }
 
@@ -1375,20 +1255,15 @@
             font-weight: 600;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            color: #703f9b;
+            color: var(--primary-dark);
             display: flex;
             align-items: center;
             gap: 0.8rem;
         }
 
         .help-title i {
-            color: #794ba1;
+            color: var(--primary);
             font-size: 1.8rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         .help-list {
@@ -1400,22 +1275,22 @@
             padding-left: 2rem;
             position: relative;
             font-size: 1.1rem;
-            color: #a88dc0;
+            color: var(--text-light);
         }
 
         .help-list li::before {
             content: "•";
-            color: #703f9b;
+            color: var(--primary);
             font-size: 1.5rem;
             position: absolute;
             left: 0;
             top: -0.4rem;
         }
 
-        /* Улучшенный футер с дополнительной информацией */
+        /* Футер */
         .footer {
-            background: var(--gradient-bg);
-            color: #FFFFFF;
+            background: var(--primary-dark);
+            color: white;
             padding: 4rem 5% 2rem;
             text-align: center;
         }
@@ -1434,13 +1309,12 @@
             font-weight: 700;
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #703f9b;
+            color: var(--primary-light);
         }
 
         .footer-description {
             margin-bottom: 1.5rem;
             opacity: 0.8;
-            color: #703f9b;
         }
 
         .footer-heading {
@@ -1448,7 +1322,7 @@
             font-weight: 600;
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
-            color: #703f9bb5;
+            color: var(--primary-light);
         }
 
         .footer-links {
@@ -1456,7 +1330,6 @@
         }
 
         .footer-links li {
-            color: #703f9bc8;
             margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
@@ -1464,7 +1337,7 @@
         }
 
         .footer-links a {
-            color: #703f9bc1;
+            color: white;
             text-decoration: none;
             opacity: 0.8;
             transition: var(--transition);
@@ -1472,15 +1345,13 @@
 
         .footer-links a:hover {
             opacity: 1;
-            color: #FFFFFF;
-            transform: translateX(5px);
+            color: var(--primary-light);
         }
 
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
-            justify-content: center;
         }
 
         .social-links a {
@@ -1491,14 +1362,13 @@
             height: 40px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
-            color: #703f9b;;
+            color: white;
             transition: var(--transition);
         }
 
         .social-links a:hover {
-            background: #FFFFFF;
-            color: var(--primary);
-            transform: rotate(360deg);
+            background: var(--primary);
+            transform: translateY(-3px);
         }
 
         .copyright {
@@ -1506,19 +1376,6 @@
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             opacity: 0.7;
-            color: #703f9b;
-        }
-
-        /* Дополнительная информация в футере */
-        .footer-info-additional {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            color: #703f9b;
-        }
-
-        .footer-info-additional p {
-            margin-bottom: 1rem;
         }
 
         /* Анимации */
@@ -1546,7 +1403,7 @@
             }
         }
 
-        /* Адаптивность - улучшенная для мобильных устройств */
+        /* Адаптивность - улучшенная для всех устройств, особенно мобильных */
         @media (max-width: 1200px) {
             .features-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1636,165 +1493,56 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                background: linear-gradient(135deg, #CDC7E3 0%, #E4D6E9 50%, #F6EAF3 100%);
+            .navbar {
+                padding: 1rem 5%;
             }
 
             .hero {
-                flex-direction: column;
-                align-items: center;
-                padding: 3rem 1rem;
-                min-height: auto;
-                background: radial-gradient(circle, rgba(168, 141, 192, 0.2) 0%, rgba(168, 141, 192, 0) 70%);
-            }
-
-            .hero::before {
-                opacity: 0.5;
-                filter: blur(3px);
-            }
-
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-                order: 2;
-                margin-top: 1rem;
-                animation: fadeInUp 1s ease;
-            }
-
-            .hero-image {
-                max-width: 140%;
-                margin: 0 auto;
-                order: 1;
-                border-radius: 30px;
-                animation: float 2s ease-in-out infinite;
-            }
-
-            @keyframes float {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-10px); }
-                100% { transform: translateY(0px); }
-            }
-
-            .hero-image::after {
-                font-size: 1rem;
-                padding: 0.5rem;
-                background: rgba(0, 0, 0, 0.4);
-                border-radius: 15px;
-                animation: pulse 1.5s infinite;
+                padding: 5rem 5% 3rem;
             }
 
             .hero-title {
-                font-size: 1.8rem;
-                line-height: 1.4;
-                color: #460c79;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-                animation: fadeInUp 1s ease;
+                font-size: 2.2rem;
             }
 
-            .hero-description {
-                font-size: 1rem;
-                margin-bottom: 1rem;
-                color: #a88dc0;
-                animation: fadeInUp 1s ease 0.3s forwards;
-            }
-
-            .stats {
-                flex-direction: column;
-                gap: 1rem;
-                justify-content: center;
-                animation: fadeInUp 1s ease 0.6s forwards;
-            }
-
-            .stat-item {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-                border-radius: 20px;
-                background: linear-gradient(135deg, var(--glass-bg), var(--accent));
-                box-shadow: 0 4px 12px rgba(168, 141, 192, 0.2);
-                animation: bounce 1.5s infinite;
-            }
-
-            .stat-number {
-                font-size: 1.5rem;
-            }
-
-            .features {
-                padding: 3rem 1rem;
-            }
-
-            .feature-card {
-                padding: 1.5rem;
-                border-radius: 25px;
-                box-shadow: 0 6px 18px rgba(168, 141, 192, 0.2);
-                animation: fadeInUp 0.8s ease forwards;
-            }
-
-            .feature-icon {
-                font-size: 2.5rem;
-                animation: bounce 1.5s infinite;
-            }
-
-            .feature-title {
+            .hero-subtitle {
                 font-size: 1.3rem;
-            }
-
-            .feature-description {
-                font-size: 1rem;
-            }
-
-            .help {
-                padding: 3rem 1rem;
             }
 
             .section-title {
-                font-size: 1.8rem;
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+                font-size: 2rem;
             }
 
             .help-card {
-                padding: 1.5rem;
-                border-radius: 25px;
-                box-shadow: 0 6px 18px rgba(168, 141, 192, 0.2);
-                animation: fadeInUp 0.8s ease forwards;
+                padding: 2rem 1.5rem;
             }
 
-            .help-title {
-                font-size: 1.3rem;
+            .modal {
+                padding: 2rem 1.5rem;
             }
 
-            .help-list li {
-                font-size: 1rem;
-            }
-
-            .footer {
-                padding: 2rem 1rem;
-            }
-
-            .footer-content {
-                gap: 1rem;
+            .specialists-grid,
+            .clients-list {
                 grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .social-links {
-                justify-content: center;
             }
 
             .navbar {
-                padding: 0.8rem 3%;
-                background: linear-gradient(to bottom, var(--primary-light), var(--primary-dark));
-                border-bottom-left-radius: 30px;
-                border-bottom-right-radius: 30px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                flex-wrap: wrap;
+            }
+
+            .nav-left {
+                order: 1;
             }
 
             .nav-logo {
+                order: 2;
+                flex: 1;
+                text-align: center;
                 font-size: 1.5rem;
-                color: rgb(86, 53, 116);
             }
 
-            .menu-toggle {
-                font-size: 1.5rem;
+            .nav-right {
+                order: 3;
             }
 
             .dashboard-tabs {
@@ -1806,7 +1554,6 @@
                 flex: 1 1 45%;
                 font-size: 0.9rem;
                 padding: 0.6rem 1rem;
-                border-radius: 20px;
             }
 
             .calendar-grid {
@@ -1816,7 +1563,6 @@
             .calendar-day {
                 padding: 0.6rem;
                 font-size: 0.8rem;
-                border-radius: 8px;
             }
 
             .time-slots {
@@ -1827,17 +1573,14 @@
             .time-slot {
                 padding: 0.6rem;
                 font-size: 0.8rem;
-                border-radius: 8px;
             }
 
             .specialist-card {
                 margin-bottom: 1rem;
-                border-radius: 25px;
             }
 
             .client-card {
                 padding: 1rem;
-                border-radius: 25px;
             }
 
             .client-header {
@@ -1868,13 +1611,53 @@
             .notification {
                 padding: 0.8rem 1rem;
                 font-size: 0.9rem;
-                border-radius: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .feature-card,
+            .help-card {
+                padding: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .dashboard-tabs {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .tab-btn {
+                flex: 1;
+                min-width: auto;
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .nav-right {
+                gap: 1rem;
+            }
+
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
             }
 
             .modal {
                 width: 95%;
                 padding: 1.5rem;
-                border-radius: 20px;
+                border-radius: 10px;
             }
 
             .modal-title {
@@ -1888,7 +1671,6 @@
             .form-input {
                 padding: 0.6rem 1rem;
                 font-size: 0.9rem;
-                border-radius: 15px;
             }
 
             .calendar-header h3 {
@@ -1922,7 +1704,6 @@
             .specialist-footer .btn {
                 padding: 0.8rem;
                 font-size: 0.9rem;
-                border-radius: 30px;
             }
 
             .client-avatar {
@@ -1954,363 +1735,6 @@
 
             .dashboard-subtitle {
                 font-size: 1rem;
-            }
-
-            .btn {
-                padding: 0.5rem 1rem;
-                font-size: 0.9rem;
-                border-radius: 25px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            }
-
-            .nav-right {
-                gap: 1rem;
-            }
-
-            .nav-item {
-                font-size: 0.9rem;
-            }
-
-            .nav-logo {
-                font-size: 1.3rem;
-            }
-
-            .mobile-menu .nav-item {
-                font-size: 1.1rem;
-                padding: 1rem 2rem;
-                border-radius: 15px;
-                margin: 0.5rem;
-                background: linear-gradient(135deg, var(--accent), var(--secondary));
-            }
-
-            .mobile-menu .nav-item:hover {
-                background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-            }
-
-            .mobile-menu .nav-auth .btn {
-                width: 80%;
-                margin: 0 auto;
-                border-radius: 30px;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-            }
-
-            .form-label {
-                font-size: 0.9rem;
-            }
-
-            .role-selector {
-                flex-direction: column;
-            }
-
-            .role-option {
-                border-radius: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            .role-icon {
-                animation: bounce 1.5s infinite;
-            }
-
-            .hero::before {
-                background-size: contain;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .navbar {
-                padding: 0.8rem 3%;
-                border-bottom-left-radius: 30px;
-                border-bottom-right-radius: 30px;
-            }
-
-            .nav-logo {
-                font-size: 1.3rem;
-            }
-
-            .menu-toggle {
-                font-size: 1.4rem;
-            }
-
-            .hero {
-                padding: 2rem 1rem;
-            }
-
-            .hero-title {
-                font-size: 1.6rem;
-            }
-
-            .hero-description {
-                font-size: 1rem;
-            }
-
-            .hero-image::after {
-                font-size: 0.9rem;
-            }
-
-            .stats {
-                gap: 0.5rem;
-            }
-
-            .stat-item {
-                padding: 0.6rem 1rem;
-            }
-
-            .stat-number {
-                font-size: 1.2rem;
-            }
-
-            .stat-label {
-                font-size: 0.8rem;
-            }
-
-            .features-grid {
-                gap: 1rem;
-            }
-
-            .feature-card {
-                padding: 1.2rem;
-            }
-
-            .feature-icon {
-                font-size: 2rem;
-            }
-
-            .feature-title {
-                font-size: 1.2rem;
-            }
-
-            .feature-description {
-                font-size: 0.9rem;
-            }
-
-            .help-cards {
-                gap: 1rem;
-            }
-
-            .help-card {
-                padding: 1.2rem;
-            }
-
-            .help-title {
-                font-size: 1.2rem;
-            }
-
-            .help-list li {
-                font-size: 0.9rem;
-            }
-
-            .footer {
-                padding: 2rem 1rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-description {
-                font-size: 0.9rem;
-            }
-
-            .footer-info-additional p {
-                font-size: 0.8rem;
-            }
-
-            .dashboard-tabs {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .tab-btn {
-                flex: 1;
-                min-width: auto;
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-            }
-
-            .modal {
-                width: 100%;
-                height: 100vh;
-                border-radius: 0;
-                padding: 1rem;
-            }
-
-            .modal-title {
-                font-size: 1.4rem;
-            }
-
-            .btn {
-                padding: 0.8rem 1rem;
-                font-size: 0.9rem;
-                border-radius: 30px;
-            }
-
-            .search-filters {
-                padding: 1rem;
-                border-radius: 15px;
-            }
-
-            .filter-row {
-                gap: 0.5rem;
-            }
-
-            .specialist-card {
-                border-radius: 25px;
-                padding: 1rem;
-            }
-
-            .specialist-avatar {
-                width: 80px;
-                height: 80px;
-            }
-
-            .specialist-name {
-                font-size: 1.1rem;
-            }
-
-            .specialist-specialty {
-                font-size: 0.9rem;
-            }
-
-            .dashboard {
-                padding: 3rem 1rem;
-            }
-
-            .dashboard-title {
-                font-size: 1.6rem;
-            }
-
-            .dashboard-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .calendar-container {
-                padding: 1rem;
-                border-radius: 15px;
-            }
-
-            .calendar-header h3 {
-                font-size: 1.2rem;
-            }
-
-            .calendar-day {
-                padding: 0.5rem;
-                font-size: 0.8rem;
-                border-radius: 10px;
-            }
-
-            .time-slots {
-                gap: 0.5rem;
-            }
-
-            .time-slot {
-                padding: 0.5rem;
-                font-size: 0.8rem;
-                border-radius: 10px;
-            }
-
-            .notification {
-                padding: 0.8rem;
-                font-size: 0.8rem;
-                border-radius: 15px;
-            }
-
-            .client-card {
-                padding: 1rem;
-                border-radius: 20px;
-            }
-
-            .client-name {
-                font-size: 1.1rem;
-            }
-
-            .client-actions .btn {
-                padding: 0.5rem;
-                font-size: 0.8rem;
-            }
-
-            .hero-image {
-                border-radius: 20px;
-            }
-
-            .hero-image::after {
-                font-size: 0.8rem;
-                padding: 0.5rem;
-            }
-
-            .stats {
-                gap: 0.5rem;
-            }
-
-            .stat-item {
-                padding: 0.6rem 1rem;
-                border-radius: 15px;
-            }
-
-            .stat-number {
-                font-size: 1.4rem;
-            }
-
-            .stat-label {
-                font-size: 0.8rem;
-            }
-
-            .feature-card {
-                border-radius: 20px;
-                padding: 1.5rem;
-            }
-
-            .feature-icon {
-                font-size: 2.5rem;
-            }
-
-            .feature-title {
-                font-size: 1.3rem;
-            }
-
-            .feature-description {
-                font-size: 1rem;
-            }
-
-            .help-card {
-                border-radius: 20px;
-                padding: 1.5rem;
-            }
-
-            .help-title {
-                font-size: 1.3rem;
-            }
-
-            .help-list li {
-                font-size: 1rem;
-            }
-
-            .footer-logo {
-                font-size: 1.5rem;
-            }
-
-            .footer-heading {
-                font-size: 1.2rem;
-            }
-
-            .footer-links li {
-                font-size: 1rem;
-            }
-
-            .social-links a {
-                width: 35px;
-                height: 35px;
-            }
-
-            .copyright {
-                font-size: 0.9rem;
             }
         }
 
@@ -2391,18 +1815,17 @@
 
         .emotion-btn {
             padding: 0.5rem;
-            border: var(--glass-border);
-            background: var(--glass-bg);
+            border: 2px solid var(--secondary);
+            background: white;
             border-radius: 10px;
             cursor: pointer;
             transition: var(--transition);
-            backdrop-filter: blur(5px);
         }
 
         .emotion-btn.selected {
             border-color: var(--primary);
             background: var(--primary);
-            color: #FFFFFF;
+            color: white;
         }
 
         /* Стили для опроса */
@@ -2421,19 +1844,16 @@
             align-items: center;
             gap: 1rem;
             padding: 1rem;
-            border: var(--glass-border);
+            border: 2px solid var(--secondary);
             border-radius: 10px;
             cursor: pointer;
             transition: var(--transition);
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
         }
 
         .survey-option:hover,
         .survey-option.selected {
             border-color: var(--primary);
             background: var(--accent);
-            box-shadow: var(--glass-shadow);
         }
 
         /* Стили для профильных медиа */
@@ -2499,12 +1919,12 @@
 
         .note-edit-btn {
             background: var(--primary);
-            color: #FFFFFF;
+            color: white;
         }
 
         .note-delete-btn {
             background: var(--error);
-            color: #FFFFFF;
+            color: white;
         }
 
         .note-emotions {
@@ -2515,7 +1935,7 @@
 
         .emotion-tag {
             background: var(--primary-light);
-            color: #FFFFFF;
+            color: white;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -2533,8 +1953,6 @@
             border-radius: 15px;
             padding: 1.5rem;
             box-shadow: inset 0 2px 10px var(--shadow);
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
         }
 
         .problem-selector,
@@ -2547,17 +1965,15 @@
             display: block;
             padding: 0.5rem;
             margin: 0.25rem 0;
-            border: var(--glass-border);
+            border: 1px solid var(--secondary);
             border-radius: 5px;
             cursor: pointer;
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
         }
 
         .problem-option.selected,
         .request-option.selected {
             background: var(--primary);
-            color: #FFFFFF;
+            color: white;
         }
 
         /* Нет результатов */
@@ -2576,7 +1992,6 @@
             padding: 1rem;
             border-radius: 10px;
             margin-bottom: 1rem;
-            box-shadow: var(--glass-shadow);
         }
 
         /* Emotion options in notes */
@@ -2588,18 +2003,17 @@
 
         .emotion-option {
             padding: 0.5rem 1rem;
-            border: var(--glass-border);
+            border: 2px solid var(--secondary);
             border-radius: 20px;
             cursor: pointer;
             transition: var(--transition);
-            background: var(--glass-bg);
-            backdrop-filter: blur(5px);
+            background: white;
         }
 
         .emotion-option.selected {
             border-color: var(--primary);
             background: var(--primary);
-            color: #FFFFFF;
+            color: white;
         }
 
         /* Client actions buttons */
@@ -2620,10 +2034,12 @@
         /* Appointments container */
         #appointmentsContainer .help-card {
             margin-bottom: 4rem;
+            /* Увеличенный промежуток между записями */
         }
 
         #allAppointmentsContainer .client-card {
             margin-bottom: 4rem;
+            /* Увеличенный промежуток между записями */
         }
 
         /* Полный профиль клиента в модале */
@@ -2643,7 +2059,6 @@
             padding: 1.5rem;
             border-radius: 10px;
             margin-bottom: 1rem;
-            box-shadow: var(--glass-shadow);
         }
 
         .client-full-profile .profile-section h4 {
@@ -2668,7 +2083,6 @@
             padding: 1.5rem;
             border-radius: 10px;
             margin-bottom: 1rem;
-            box-shadow: var(--glass-shadow);
         }
 
         .specialist-full-profile .profile-section h4 {
@@ -2691,19 +2105,18 @@
 
         /* Widget styles for profiles */
         .profile-section {
-            background: var(--glass-bg);
+            background: var(--accent);
             padding: 1.5rem;
-            border-radius: 20px;
+            border-radius: 10px;
             margin-bottom: 1rem;
-            border: var(--glass-border);
-            box-shadow: var(--glass-shadow);
-            backdrop-filter: blur(10px);
+            border: 1px solid var(--secondary);
         }
 
         /* Pending appointment card style */
         .pending-appointment-card {
-            background: #FEF9E7;
-            border-left: 4px solid #F39C12;
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+
         }
 
         /* Добавить промежуток между записями */
@@ -2716,11 +2129,8 @@
         .review-section {
             margin-top: 1rem;
             padding: 1rem;
-            background: var(--glass-bg);
-            border-radius: 15px;
-            box-shadow: var(--glass-shadow);
-            border: var(--glass-border);
-            backdrop-filter: blur(10px);
+            background: var(--background-alt);
+            border-radius: 10px;
         }
 
         .review-entry {
@@ -2730,7 +2140,7 @@
         }
 
         .review-rating {
-            color: #FFD700;
+            color: #ffd700;
         }
 
         .review-form {
@@ -2748,92 +2158,15 @@
         }
 
         .star-rating label {
-            color: #CCC;
+            color: #ccc;
             cursor: pointer;
             font-size: 1.5rem;
-            transition: var(--transition);
         }
 
         .star-rating input:checked ~ label,
         .star-rating label:hover,
         .star-rating label:hover ~ label {
-            color: #FFD700;
-        }
-
-        /* Улучшения для мобильных устройств */
-        @media (max-width: 768px) {
-            body {
-                background: linear-gradient(135deg, #CDC7E3 0%, #E4D6E9 50%, #F6EAF3 100%);
-            }
-
-            .hero::before {
-                opacity: 0.5;
-                filter: blur(3px);
-            }
-
-            .navbar {
-                background: linear-gradient(to bottom, var(--primary-light), var(--primary-dark));
-                border-bottom-left-radius: 30px;
-                border-bottom-right-radius: 30px;
-            }
-
-            .nav-logo {
-                color: rgb(86, 53, 116);
-            }
-
-            .feature-card, .help-card {
-                border-radius: 25px;
-                box-shadow: 0 6px 18px rgba(168, 141, 192, 0.2);
-            }
-
-            .feature-icon, .help-title i {
-                animation: bounce 1.5s infinite;
-            }
-
-            .btn-register {
-                background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            }
-
-            .btn-login {
-                background: linear-gradient(135deg, var(--accent), var(--secondary));
-            }
-
-            .modal {
-                border-radius: 20px;
-                padding: 1.5rem;
-            }
-
-            .calendar-container {
-                border-radius: 15px;
-                padding: 1rem;
-            }
-
-            .calendar-day {
-                border-radius: 8px;
-                padding: 0.6rem;
-            }
-
-            .time-slot {
-                border-radius: 8px;
-                padding: 0.6rem;
-            }
-
-            /* Для мобильных: только название и бургер меню */
-            .nav-right .nav-item {
-                display: none;
-            }
-
-            .nav-right .nav-auth {
-                display: none;
-            }
-
-            .nav-right .nav-logout {
-                display: none;
-            }
-
-            .nav-right {
-                justify-content: flex-end;
-            }
+            color: #ffd700;
         }
     </style>
 </head>
@@ -2842,15 +2175,10 @@
     <!-- Навигация -->
     <nav class="navbar">
         <div class="nav-left">
-            <div class="nav-logo"><i class="fas fa-cube"></i> Центр супервизоров</div>
+            <div class="nav-logo">Центр психологов</div>
         </div>
 
         <div class="nav-right">
-            <a class="nav-item">Главная</a>
-            <a class="nav-item">О нас</a>
-            <a class="nav-item">Услуги</a>
-            <a class="nav-item">Блог</a>
-            <a class="nav-item">Контакты</a>
             <div class="nav-auth">
                 <a class="btn btn-login" id="loginBtn">Вход</a>
                 <a class="btn btn-register" id="registerBtn">Регистрация</a>
@@ -2882,43 +2210,19 @@
         <div class="menu-overlay"></div>
     </nav>
 
-    <!-- Герой секция с большой фото справа и дополнительным текстом -->
+    <!-- Герой секция -->
     <section class="hero" id="main-content">
         <div class="hero-content">
             <h1 class="hero-title">
-                Центр супервизоров: "Путь к профессиональному росту начинается здесь"
+                Центр психологов: "Путь к внутреннему равновесию начинается здесь"
             </h1>
+            <div class="divider"></div>
             <p class="hero-description">
-                Мы создаем пространство, где каждый специалист может безопасно и уверенно обратиться за супервизией, зная, что его примут, поймут и профессионально поддержат в развитии.
+                Мы создаем пространство, где каждый человек может безопасно и уверенно
+                обратиться за психологической помощью, зная, что его примут, поймут и
+                профессионально поддержат.
             </p>
-            <p class="hero-description">
-                Присоединяйтесь к сообществу профессионалов! Наша платформа предлагает индивидуальные сессии, групповые супервизии и ресурсы для непрерывного обучения. Откройте новые горизонты в своей карьере.
-            </p>
-           
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number">140+</div>
-                    <div class="stat-label">Специалистов</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">7+</div>
-                    <div class="stat-label">Лет опыта</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Публикаций</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Успешных сессий</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Довольных клиентов</div>
-                </div>
-            </div>
         </div>
-        <img src="C:\Users\user\Downloads\snapedit_1758597351469.png" alt="Профессиональная поддержка" class="hero-image">
     </section>
 
     <!-- Особенности -->
@@ -2929,7 +2233,10 @@
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 <h3 class="feature-title">Доверие и Безопасность</h3>
-                <p class="feature-description">Создаем доверительную атмосферу для обсуждения рабочих моментов без осуждения. Конфиденциальность - наш приоритет. Мы соблюдаем все этические стандарты.</p>
+                <p class="feature-description">
+                    Создаем доверительную атмосферу, где вы можете быть собой без страха
+                    осуждения
+                </p>
             </div>
 
             <div class="feature-card">
@@ -2937,7 +2244,10 @@
                     <i class="fas fa-heart"></i>
                 </div>
                 <h3 class="feature-title">Эмпатия и Открытость</h3>
-                <p class="feature-description">Мы слушаем, слышим и понимаем ваши профессиональные переживания, принимая вас без условий. Поддержка в сложных ситуациях - наша миссия.</p>
+                <p class="feature-description">
+                    Мы слушаем, слышим и понимаем ваши переживания, принимая вас без
+                    условий
+                </p>
             </div>
 
             <div class="feature-card">
@@ -2945,9 +2255,12 @@
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <h3 class="feature-title">Профессионализм и Развитие</h3>
-                <p class="feature-description">Наши супервизоры постоянно совершенствуются, чтобы помочь вам наиболее эффективно развиваться. Регулярные тренинги и семинары для всех участников.</p>
+                <p class="feature-description">
+                    Наши специалисты постоянно совершенствуются, чтобы помочь вам
+                    наиболее эффективно
+                </p>
             </div>
-            
+        </div>
     </section>
 
     <!-- Секция помощи -->
@@ -2957,66 +2270,73 @@
         <div class="help-cards">
             <div class="help-card">
                 <h3 class="help-title">
-                    <i class="fas fa-user"></i> Вы — специалист, и:
+                    <i class="fas fa-child"></i> Вы — заботливый родитель, и:
                 </h3>
                 <ul class="help-list">
-                    <li>Столкнулись с трудностями в работе, ошибками или неуверенностью</li>
-                    <li>Хотите обсудить сильные и слабые стороны своей практики</li>
-                    <li>Ищете поддержку в профессиональном развитии</li>
-                    <li>Чувствуете выгорание или потерю мотивации</li>
-                    <li>Нуждаетесь в свежем взгляде на сложные случаи</li>
+                    <li>Ваш ребенок тревожный, замкнутый или раздражительный</li>
+                    <li>
+                        Подросток столкнулся с кризисом, агрессией, апатией или потерей
+                        мотивации
+                    </li>
+                    <li>У вас возникли трудности в общении с детьми</li>
+                    <li>
+                        Вы не понимаете, как поддержать ребенка в новой ситуации — развод,
+                        переезд, адаптация
+                    </li>
                 </ul>
             </div>
 
             <div class="help-card">
                 <h3 class="help-title">
-                    <i class="fas fa-users"></i> Вы работаете с клиентами, и:
+                    <i class="fas fa-user"></i> Вы — взрослый человек, и:
                 </h3>
                 <ul class="help-list">
-                    <li>Нуждаетесь в анализе сложных случаев</li>
-                    <li>Хотите улучшить качество своей работы</li>
-                    <li>Анализ случаев</li>
-                    <li>Стремитесь к долгосрочному развитию навыков</li>
-                    <li>Ищете способы повышения эффективности терапии</li>
+                    <li>Чувствуете выгорание, потерю интереса к жизни</li>
+                    <li>
+                        Стоите перед сложным выбором, сменой профессии или круга общения
+                    </li>
+                    <li>Вас не радуют достижения, хотя "всё вроде есть"</li>
+                    <li>
+                        Испытываете внутренний кризис — пустоту, потерю смысла,
+                        одиночество
+                    </li>
                 </ul>
             </div>
 
             <div class="help-card">
                 <h3 class="help-title">
-                    <i class="fas fa-hands-helping"></i> Вы переживаете кризис, и:
+                    <i class="fas fa-hands-helping"></i> Вы столкнулись с утратой, и:
                 </h3>
                 <ul class="help-list">
-                    <li>Нуждаетесь в обсуждении профессиональных утрат или неудач</li>
-                    <li>Испытываете эмоциональное истощение</li>
-                    <li>Хотите получить объективную обратную связь</li>
-                    <li>Ищете поддержку в сложных этических вопросах</li>
-                    <li>Боретесь с последствиями травматичных случаев</li>
+                    <li>Переживаете потерю близкого человека</li>
+                    <li>Испытываете боль, вину, злость, отчаяние</li>
+                    <li>Вам трудно говорить об этом, но молчать невозможно</li>
+                    <li>Окружающие не понимают, а внутри — боль и тишина</li>
                 </ul>
             </div>
 
             <div class="help-card">
                 <h3 class="help-title"><i class="fas fa-hands"></i> И если:</h3>
                 <ul class="help-list">
-                    <li>Вам важно быть услышанным без осуждения</li>
-                    <li>Вы ищете профессиональную, бережную супервизию</li>
+                    <li>Вам важно, чтобы вас услышали без осуждения</li>
+                    <li>Вы ищете профессиональную, бережную поддержку</li>
                     <li>
-                        Вы готовы начать путь к профессиональному росту — в удобном темпе и в безопасной среде
+                        Вы готовы начать путь к себе — в удобном темпе и в безопасной
+                        среде
                     </li>
-                    <li>Хотите повысить свою компетентность и уверенность</li>
-                    <li>Стремитесь к балансу между работой и личной жизнью</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Футер с дополнительной информацией -->
+    <!-- Футер -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-info">
-                <div class="footer-logo">Центр супервизоров</div>
+                <div class="footer-logo">Центр психологов</div>
                 <p class="footer-description">
-                    Пространство, где каждый специалист может получить профессиональную
-                    супервизию и поддержку в вашем развитии.
+                    Пространство, где каждый может получить профессиональную
+                    психологическую помощь и поддержку.
                 </p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-vk"></i></a>
@@ -3042,20 +2362,14 @@
                 <ul class="footer-links">
                     <li><i class="fas fa-map-marker-alt"></i> Челябинск</li>
                     <li><i class="fas fa-phone"></i> +7 (999) 123-45-67</li>
-                    <li><i class="fas fa-envelope"></i> info@supervizor-center.ru</li>
+                    <li><i class="fas fa-envelope"></i> info@psy-center.ru</li>
                     <li><i class="fas fa-clock"></i> Пн-Пт: 9:00-21:00</li>
                 </ul>
             </div>
         </div>
 
-        <div class="footer-info-additional">
-            <p>Мы предлагаем широкий спектр услуг по супервизии для психологов и специалистов. Наша команда состоит из опытных профессионалов, готовых помочь в вашем росте.</p>
-            <p>Подписывайтесь на нашу рассылку для получения обновлений и советов по профессиональному развитию.</p>
-            <p>Мы регулярно проводим вебинары и мастер-классы. Следите за анонсами в блоге.</p>
-        </div>
-
         <div class="copyright">
-            &copy; 2025 Центр супервизоров. Все права защищены.
+            &copy; 2025 Центр психологов. Все права защищены.
         </div>
     </footer>
 
@@ -3105,7 +2419,7 @@
                     </div>
                     <div class="role-option" data-role="specialist">
                         <div class="role-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div>Супервизор</div>
+                        <div>Специалист</div>
                     </div>
                 </div>
                 <input type="hidden" id="userRole" name="role" value="client" />
@@ -3162,24 +2476,24 @@
     <div class="modal-overlay survey-modal" id="surveyModal">
         <div class="modal">
             <span class="modal-close" data-modal="surveyModal">&times;</span>
-            <h2 class="modal-title">Расскажите, какая супервизия вам нужна</h2>
+            <h2 class="modal-title">Расскажите, какая помощь вам нужна</h2>
             <form id="surveyForm">
                 <div class="survey-options">
-                    <label class="survey-option" data-problem="Профессиональное выгорание">
-                        <input type="radio" name="problem" value="Профессиональное выгорание" style="display: none;">
-                        <i class="fas fa-fire"></i> Профессиональное выгорание
+                    <label class="survey-option" data-problem="Расставание">
+                        <input type="radio" name="problem" value="Расставание" style="display: none;">
+                        <i class="fas fa-heart-broken"></i> Расставание
                     </label>
-                    <label class="survey-option" data-problem="Этические вопросы">
-                        <input type="radio" name="problem" value="Этические вопросы" style="display: none;">
-                        <i class="fas fa-balance-scale"></i> Этические вопросы
+                    <label class="survey-option" data-problem="Депрессия">
+                        <input type="radio" name="problem" value="Депрессия" style="display: none;">
+                        <i class="fas fa-cloud-rain"></i> Депрессия
                     </label>
-                    <label class="survey-option" data-problem="Анализ случаев">
-                        <input type="radio" name="problem" value="Анализ случаев" style="display: none;">
-                        <i class="fas fa-search"></i> Анализ случаев
+                    <label class="survey-option" data-problem="Тревога">
+                        <input type="radio" name="problem" value="Тревога" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i> Тревога
                     </label>
-                    <label class="survey-option" data-problem="Развитие навыков">
-                        <input type="radio" name="problem" value="Развитие навыков" style="display: none;">
-                        <i class="fas fa-chart-line"></i> Развитие навыков
+                    <label class="survey-option" data-problem="Семейные проблемы">
+                        <input type="radio" name="problem" value="Семейные проблемы" style="display: none;">
+                        <i class="fas fa-users"></i> Семейные проблемы
                     </label>
                     <label class="survey-option" data-problem="Другое">
                         <input type="radio" name="problem" value="Другое" style="display: none;">
@@ -3197,7 +2511,7 @@
     <div class="modal-overlay rate-session-modal" id="rateSessionModal">
         <div class="modal">
             <span class="modal-close" data-modal="rateSessionModal">&times;</span>
-            <h2 class="modal-title">Оцените сессию</h2>
+            <h2 class="modal-title">Оцените занятие</h2>
             <form id="rateSessionForm">
                 <div class="form-group">
                     <label class="form-label">Выберите эмоции</label>
@@ -3220,9 +2534,9 @@
                         placeholder="Ваши выводы..."></textarea>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="sessionComment">Комментарий к сессии</label>
+                    <label class="form-label" for="sessionComment">Комментарий к занятию</label>
                     <textarea id="sessionComment" class="form-input" rows="4"
-                        placeholder="Ваши мысли о сессии..."></textarea>
+                        placeholder="Ваши мысли о занятии..."></textarea>
                 </div>
                 <input type="hidden" id="sessionAppId" value="">
                 <button type="submit" class="btn btn-register" style="width: 100%">Сохранить оценку</button>
@@ -3236,8 +2550,8 @@
             <span class="modal-close" data-modal="appointmentNotesChoiceModal">&times;</span>
             <h2 class="modal-title">Заметки к записи</h2>
             <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
-                <button class="btn btn-login" id="sessionNoteBtn">Заметка до сессии</button>
-                <button class="btn btn-register" id="conductedBtn">Сессия проведена</button>
+                <button class="btn btn-login" id="sessionNoteBtn">Заметка до занятия</button>
+                <button class="btn btn-register" id="conductedBtn">Занятие проведено</button>
             </div>
         </div>
     </div>
@@ -3294,7 +2608,7 @@
 
         <div class="dashboard-tabs">
             <button class="tab-btn active" data-tab="search">
-                Поиск супервизора
+                Поиск специалиста
             </button>
             <button class="tab-btn" data-tab="appointments">Мои записи</button>
             <button class="tab-btn" data-tab="journal">Мой дневник</button>
@@ -3308,15 +2622,15 @@
                         <label class="form-label" for="specialtyFilter">Специализация</label>
                         <select id="specialtyFilter" class="form-input">
                             <option value="">Все специализации</option>
-                            <option value="Супервизия для семейных психологов">Супервизия для семейных психологов</option>
-                            <option value="Супервизия для детских психологов">Супервизия для детских психологов</option>
-                            <option value="Супервизия для клинических психологов">Супервизия для клинических психологов</option>
-                            <option value="Супервизия для нейропсихологов">Супервизия для нейропсихологов</option>
+                            <option value="Семейный психолог">Семейный психолог</option>
+                            <option value="Детский психолог">Детский психолог</option>
+                            <option value="Клинический психолог">Клинический психолог</option>
+                            <option value="Нейропсихолог">Нейропсихолог</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="priceFilter">Цена за сессию</label>
+                        <label class="form-label" for="priceFilter">Цена за сеанс</label>
                         <select id="priceFilter" class="form-input">
                             <option value="">Любая</option>
                             <option value="1000-2000">1000-2000 руб.</option>
@@ -3339,7 +2653,7 @@
                 <div class="filter-row">
                     <div class="form-group">
                         <label class="form-label" for="searchInput">Поиск по имени</label>
-                        <input type="text" id="searchInput" class="form-input" placeholder="Введите имя супервизора" />
+                        <input type="text" id="searchInput" class="form-input" placeholder="Введите имя специалиста" />
                     </div>
 
                     <button class="btn btn-register" id="applyFilters">
@@ -3349,7 +2663,7 @@
             </div>
 
             <div class="specialists-grid" id="specialistsContainer">
-                <!-- Супервизоры будут добавляться через JavaScript -->
+                <!-- Специалисты будут добавляться через JavaScript -->
             </div>
         </div>
 
@@ -3416,10 +2730,10 @@
         </div>
     </section>
 
-    <!-- Личный кабинет супервизора -->
+    <!-- Личный кабинет специалиста -->
     <section class="dashboard" id="specialistDashboard">
         <div class="dashboard-header">
-            <h1 class="dashboard-title">Кабинет супервизора</h1>
+            <h1 class="dashboard-title">Кабинет специалиста</h1>
             <p class="dashboard-subtitle">
                 Добро пожаловать, <span id="specialistName">Доктор Петрова</span>!
             </p>
@@ -3456,6 +2770,7 @@
                     <!-- Временные слоты будут добавляться через JavaScript -->
                 </div>
             </div>
+
             <div class="form-group">
                 <button class="btn btn-register" id="saveSchedule">
                     Сохранить расписание
@@ -3533,10 +2848,10 @@
                 <div class="form-group">
                     <label class="form-label" for="specialistProfileSpecialty">Специализация</label>
                     <select id="specialistProfileSpecialty" class="form-input">
-                        <option value="Супервизия для семейных психологов">Супервизия для семейных психологов</option>
-                        <option value="Супервизия для детских психологов">Супервизия для детских психологов</option>
-                        <option value="Супервизия для клинических психологов" selected>Супервизия для клинических психологов</option>
-                        <option value="Супервизия для нейропсихологов">Супервизия для нейропсихологов</option>
+                        <option value="Семейный психолог">Семейный психолог</option>
+                        <option value="Детский психолог">Детский психолог</option>
+                        <option value="Клинический психолог" selected>Клинический психолог</option>
+                        <option value="Нейропсихолог">Нейропсихолог</option>
                     </select>
                 </div>
 
@@ -3554,11 +2869,11 @@
                 <div class="form-group">
                     <label class="form-label" for="specialistProfileDescription">О себе</label>
                     <textarea id="specialistProfileDescription" class="form-input"
-                        rows="4">Специализируюсь на супервизии работы с тревожными расстройствами и депрессией. Использую методы КПТ и гештальт-терапии.</textarea>
+                        rows="4">Специализируюсь на работе с тревожными расстройствами и депрессией. Использую методы КПТ и гештальт-терапии.</textarea>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="specialistProfilePrice">Цена за сессию (руб.)</label>
+                    <label class="form-label" for="specialistProfilePrice">Цена за сеанс (руб.)</label>
                     <input type="number" id="specialistProfilePrice" class="form-input" value="3500" min="0" />
                 </div>
 
@@ -3592,18 +2907,18 @@
         </div>
     </div>
 
-    <!-- Модальное окно для полного профиля супервизора (в кабинете клиента) -->
+    <!-- Модальное окно для полного профиля специалиста (в кабинете клиента) -->
     <div class="modal-overlay specialist-detail-modal" id="specialistDetailModal">
         <div class="modal modal-wide specialist-full-profile">
             <span class="modal-close" data-modal="specialistDetailModal">&times;</span>
-            <h2 class="modal-title" id="specialistDetailTitle">Профиль супервизора</h2>
+            <h2 class="modal-title" id="specialistDetailTitle">Профиль специалиста</h2>
             <div id="specialistFullProfileContent">
                 <!-- Содержимое профиля будет добавляться через JS -->
             </div>
         </div>
     </div>
 
-    <!-- Модальное окно для заметок супервизора -->
+    <!-- Модальное окно для заметок специалиста -->
     <div class="modal-overlay notes-modal" id="notesModal">
         <div class="modal">
             <span class="modal-close" data-modal="notesModal">&times;</span>
@@ -3613,17 +2928,16 @@
             </div>
             <form id="notesForm" class="notes-form">
                 <div class="form-group">
-                    <label class="form-label" for="noteContent">Описание сессии, чувств и эмоций клиента</label>
+                    <label class="form-label" for="noteContent">Описание занятия, чувств и эмоций клиента</label>
                     <textarea id="noteContent" class="form-input"
-                        placeholder="Опишите ключевые моменты сессии, наблюдаемые эмоции и прогресс..."
+                        placeholder="Опишите ключевые моменты занятия, наблюдаемые эмоции и прогресс..."
                         required></textarea>
                 </div>
                 <div class="form-group problem-selector">
                     <label class="form-label">Основная проблема клиента</label>
                     <div>
                         <div class="problem-option selected" data-problem="Эмоциональное выгорание">Эмоциональное
-                            выгорание
-                        </div>
+                            выгорание</div>
                         <div class="problem-option" data-problem="Отношения и конфликты">Отношения и конфликты</div>
                         <div class="problem-option" data-problem="Тревога и стресс">Тревога и стресс</div>
                         <div class="problem-option" data-problem="Самооценка">Самооценка</div>
@@ -3647,11 +2961,11 @@
         </div>
     </div>
 
-    <!-- Модальное окно для записи на супервизию (подтверждение) -->
+    <!-- Модальное окно для записи на консультацию (подтверждение) -->
     <div class="modal-overlay booking-modal" id="bookingModal">
         <div class="modal">
             <span class="modal-close" data-modal="bookingModal">&times;</span>
-            <h2 class="modal-title">Запись на супервизию</h2>
+            <h2 class="modal-title">Запись на консультацию</h2>
             <div class="booking-summary" id="bookingSummary">
                 <!-- Информация о записи будет добавляться через JS -->
             </div>
@@ -3668,7 +2982,7 @@
         </div>
     </div>
 
-    <!-- Модальное окно записи клиента (супервизор) -->
+    <!-- Модальное окно записи клиента (специалист) -->
     <div class="modal-overlay modal-large" id="bookClientModal">
         <div class="modal modal-large">
             <span class="modal-close" data-modal="bookClientModal">&times;</span>
@@ -3693,7 +3007,7 @@
         <div class="modal">
             <span class="modal-close" data-modal="scheduleChoiceModal">&times;</span>
             <h2 class="modal-title">Что планируете на это время?</h2>
-            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
                 <button class="btn btn-register" id="bookClientChoice">Записать клиента</button>
                 <button class="btn btn-login" id="otherPlanChoice">Другой план</button>
             </div>
@@ -3762,7 +3076,7 @@
         </div>
     </div>
 
-    <!-- Модальное окно для переноса записи супервизором -->
+    <!-- Модальное окно для переноса записи специалистом -->
     <div class="modal-overlay modal-large" id="rescheduleModal">
         <div class="modal modal-large">
             <span class="modal-close" data-modal="rescheduleModal">&times;</span>
@@ -3792,42 +3106,48 @@
         <div class="loader"></div>
     </div>
 
-
     <script>
         // Система хранения данных
         const Storage = {
+            // Получение данных из localStorage
             get: (key) => {
                 const data = localStorage.getItem(key);
                 return data ? JSON.parse(data) : null;
             },
 
+            // Сохранение данных в localStorage
             set: (key, data) => {
                 localStorage.setItem(key, JSON.stringify(data));
             },
 
+            // Удаление данных из localStorage
             remove: (key) => {
                 localStorage.removeItem(key);
             },
 
+            // Очистка всех данных
             clear: () => {
                 localStorage.clear();
             },
         };
 
+        // Ключи для хранения данных
         const STORAGE_KEYS = {
-            USERS: "supervizor_users",
-            SPECIALISTS: "supervizor_specialists",
-            APPOINTMENTS: "supervizor_appointments",
-            CLIENTS: "supervizor_clients",
-            JOURNALS: "supervizor_journals",
-            NOTES: "supervizor_notes",
-            REVIEWS: "supervizor_reviews",
-            CURRENT_USER: "supervizor_current_user",
+            USERS: "psycenter_users",
+            SPECIALISTS: "psycenter_specialists",
+            APPOINTMENTS: "psycenter_appointments",
+            CLIENTS: "psycenter_clients",
+            JOURNALS: "psycenter_journals",
+            NOTES: "psycenter_notes",
+            REVIEWS: "psycenter_reviews",
+            CURRENT_USER: "psycenter_current_user",
         };
 
         // Инициализация данных при первом запуске
         function initializeData() {
+            // Проверяем, инициализированы ли уже данные
             if (!Storage.get(STORAGE_KEYS.USERS)) {
+                // Создаем тестовых пользователей
                 const users = [
                     {
                         id: 1,
@@ -3838,7 +3158,7 @@
                         phone: "+7 (999) 123-45-67",
                         birthdate: "1990-05-15",
                         photo: "",
-                        helpNeeded: "Профессиональное выгорание",
+                        helpNeeded: "Депрессия",
                     },
                     {
                         id: 2,
@@ -3846,11 +3166,11 @@
                         email: "specialist@example.com",
                         password: "password123",
                         role: "specialist",
-                        specialty: "Супервизия для клинических психологов",
+                        specialty: "Клинический психолог",
                         experience: 7,
                         education: "МГУ, факультет психологии",
                         description:
-                            "Специализируюсь на супервизии работы с тревожными расстройствами и депрессией. Использую методы КПТ и гештальт-терапии.",
+                            "Специализируюсь на работе с тревожными расстройствами и депрессией. Использую методы КПТ и гештальт-терапии.",
                         price: 3500,
                         photo: "",
                         video: "",
@@ -3861,44 +3181,45 @@
             }
 
             if (!Storage.get(STORAGE_KEYS.SPECIALISTS)) {
+                // Создаем тестовых специалистов
                 const specialists = [
                     {
                         id: 1,
                         name: "Мария Петрова",
-                        specialty: "Супервизия для клинических психологов",
+                        specialty: "Клинический психолог",
                         experience: 7,
                         rating: 4.8,
                         reviews: 42,
                         price: 3500,
                         avatar: "https://randomuser.me/api/portraits/women/12.jpg",
                         description:
-                            "Специализируюсь на супервизии работы с тревожными расстройствами и депрессией. Использую методы КПТ и гештальт-терапии.",
+                            "Специализируюсь на работе с тревожными расстройствами и депрессией. Использую методы КПТ и гештальт-терапии.",
                         userId: 2,
                     },
                     {
                         id: 2,
                         name: "Иван Сидоров",
-                        specialty: "Супервизия для семейных психологов",
+                        specialty: "Семейный психолог",
                         experience: 5,
                         rating: 4.6,
                         reviews: 28,
                         price: 3000,
                         avatar: "https://randomuser.me/api/portraits/men/32.jpg",
                         description:
-                            "Помогаю в супервизии парам наладить отношения, решить конфликты и улучшить взаимопонимание.",
+                            "Помогаю парам наладить отношения, решить конфликты и улучшить взаимопонимание.",
                         userId: null,
                     },
                     {
                         id: 3,
                         name: "Ольга Иванова",
-                        specialty: "Супервизия для детских психологов",
+                        specialty: "Детский психолог",
                         experience: 9,
                         rating: 4.9,
                         reviews: 56,
                         price: 4000,
                         avatar: "https://randomuser.me/api/portraits/women/45.jpg",
                         description:
-                            "Работаю в супервизии с детьми и подростками. Помогаю решить проблемы поведения, обучения и социализации.",
+                            "Работаю с детьми и подростками. Помогаю решить проблемы поведения, обучения и социализации.",
                         userId: null,
                     },
                 ];
@@ -4027,7 +3348,23 @@
                 });
             }
 
-            // Анимация на навигации при прокрутке
+            // Инициализация
+            initModals();
+            initAuth();
+            initDashboard();
+            initSpecialists();
+            initCalendar();
+            initNotifications();
+            initNotes();
+            initJournal();
+            initBooking();
+            initSpecialistAppointments();
+            initBookClient();
+            initScheduleChoice();
+            initClientBookingModal();
+            initRescheduleModal(); // Инициализация модала переноса
+
+            // Анимация навигации при прокрутке
             window.addEventListener("scroll", function () {
                 const navbar = document.querySelector(".navbar");
                 if (window.scrollY > 50) {
@@ -4080,25 +3417,6 @@
                     }
                 });
             });
-
-            // Инициализация
-            initModals();
-            initAuth();
-            initDashboard();
-            initSpecialists();
-            initCalendar();
-            initNotifications();
-            initNotes();
-            initJournal();
-            initBooking();
-            initSpecialistAppointments();
-            initBookClient();
-            initScheduleChoice();
-            initClientBookingModal();
-            initRescheduleModal(); // Инициализация модала переноса
-
-            // Запуск инициализации
-            initializeData();
         });
 
         // Загрузка данных из хранилища
@@ -4267,7 +3585,7 @@
                 let noteContent = content;
                 if (app) {
                     noteDate = `${app.dateDay} ${getMonthName(app.dateMonth - 1)} ${app.dateYear}`;
-                    noteContent = `Заметка к сессии с супервизором ${app.specialistName} в ${app.time} (${noteDate}): ${content}. Шкала понимания: ${scale || "Не указана"}.`;
+                    noteContent = `Заметка к занятию с психологом ${app.specialistName} в ${app.time} (${noteDate}): ${content}. Шкала понимания: ${scale || "Не указана"}.`;
                 } else {
                     noteContent = `Заметка: ${content}. Шкала понимания: ${scale || "Не указана"}.`;
                 }
@@ -4464,13 +3782,13 @@
             users.push(newUser);
             Storage.set(STORAGE_KEYS.USERS, users);
 
-            // Если это супервизор, создаем запись в таблице специалистов
+            // Если это специалист, создаем запись в таблице специалистов
             if (role === "specialist") {
                 const specialists = Storage.get(STORAGE_KEYS.SPECIALISTS) || [];
                 const newSpecialist = {
                     id: Date.now(),
                     name,
-                    specialty: "Супервизия для клинических психологов",
+                    specialty: "Клинический психолог",
                     experience: 0,
                     rating: 0,
                     reviews: 0,
@@ -4481,7 +3799,7 @@
                         "/" +
                         Math.floor(Math.random() * 50) +
                         ".jpg",
-                    description: "Новый супервизор",
+                    description: "Новый специалист",
                     userId: newUser.id,
                 };
 
@@ -4570,13 +3888,14 @@
                     (s) => s.userId === currentUser.id
                 );
                 if (specialist) {
-                    document.getElementById("specialistName").textContent = specialist.name;
+                    document.getElementById("specialistName").textContent =
+                        specialist.name;
                     document.getElementById("specialistProfileName").value =
                         specialist.name;
                     document.getElementById("specialistProfileEmail").value =
                         currentUser.email;
                     document.getElementById("specialistProfileSpecialty").value =
-                        specialist.specialty || "Супервизия для клинических психологов";
+                        specialist.specialty || "Клинический психолог";
                     document.getElementById("specialistProfileExperience").value =
                         specialist.experience || 0;
                     document.getElementById("specialistProfileEducation").value =
@@ -4594,9 +3913,6 @@
                         document.getElementById("specialistVideoPreview").style.display = "block";
                     }
                 }
-                loadSpecialistClients();
-                renderClients();
-                renderAllAppointments();
                 loadSpecialistClients();
                 renderClients();
                 renderCalendar();
@@ -4620,9 +3936,9 @@
             journalData = Storage.get(STORAGE_KEYS.JOURNALS) || [];
         }
 
-        // Проверка новых записей для клиента (pending от супервизора)
+        // Проверка новых записей для клиента (pending от специалиста)
         function checkForNewAppointmentsClient() {
-            const newAppointments = appointmentsData.filter(a => a.clientId === currentUser.id && a.status === "pending" && a.creatorRole === "specialist" && a.seenByClient !== true);
+            const newAppointments = appointmentsData.filter(a => a.clientId === currentUser.id && a.status === "pending" && a.creatorRole === "specialist" && !a.seenByClient);
             if (newAppointments.length > 0) {
                 newAppointments.forEach(app => {
                     showNotificationNewAppointmentClient(app);
@@ -4637,7 +3953,7 @@
             const notification = createNewAppointmentNotification(
                 appointment,
                 "client",
-                "Супервизор предлагает запись на сессию!"
+                "Психолог предлагает запись на консультацию!"
             );
             const container = document.getElementById("notificationContainer");
             container.appendChild(notification);
@@ -4649,10 +3965,10 @@
             }, 7000);
         }
 
-        // Проверка новых запросов для супервизора (pending от клиента)
+        // Проверка новых запросов для специалиста (pending от клиента)
         function checkForNewAppointmentsSpecialist() {
             const mySpecialist = specialistsData.find(s => s.userId === currentUser.id);
-            const newRequests = appointmentsData.filter(a => a.specialistId === mySpecialist.id && a.status === "pending" && a.creatorRole === "client" && a.seenBySpecialist !== true);
+            const newRequests = appointmentsData.filter(a => a.specialistId === mySpecialist.id && a.status === "pending" && a.creatorRole === "client" && !a.seenBySpecialist);
             if (newRequests.length > 0) {
                 newRequests.forEach(app => {
                     showNotificationNewAppointmentSpecialist(app);
@@ -4662,12 +3978,12 @@
             }
         }
 
-        // Показ уведомления новой записи для супервизора
+        // Показ уведомления новой записи для специалиста
         function showNotificationNewAppointmentSpecialist(appointment) {
             const notification = createNewAppointmentNotification(
                 appointment,
                 "specialist",
-                "Клиент запрашивает запись на супервизию!"
+                "Клиент запрашивает запись на консультацию!"
             );
             const container = document.getElementById("notificationContainer");
             container.appendChild(notification);
@@ -4720,6 +4036,15 @@
                 updateBookingsFromAppointments();
                 showNotification(`Запись с ${otherUserName} подтверждена`, "success");
 
+                // Уведомление другому пользователю (симуляция)
+                setTimeout(() => {
+                    if (currentUser.role === "client") {
+                        showNotification("Вы записались на консультацию!", "success");
+                    } else {
+                        showNotification(`Клиент ${otherUserName} записан!`, "success");
+                    }
+                }, 1000);
+
                 // Обновляем виды
                 if (currentUser.role === "client") {
                     loadUserAppointments();
@@ -4733,6 +4058,15 @@
                 Storage.set(STORAGE_KEYS.APPOINTMENTS, appointmentsData);
                 updateBookingsFromAppointments();
                 showNotification(`Запись с ${otherUserName} отклонена`, "error");
+
+                // Уведомление другому пользователю
+                setTimeout(() => {
+                    if (currentUser.role === "client") {
+                        showNotification("Вы отказались от записи", "error");
+                    } else {
+                        showNotification(`Запрос от ${otherUserName} отклонен`, "error");
+                    }
+                }, 1000);
 
                 // Обновляем виды
                 if (currentUser.role === "client") {
@@ -4748,12 +4082,12 @@
             const notifications = document.querySelectorAll(".notification.new-appointment");
             notifications.forEach(n => {
                 n.classList.remove("show");
-                n.classList.remove("hide");
+                n.classList.add("hide");
                 setTimeout(() => n.remove(), 300);
             });
         }
 
-        // Загрузка клиентов супервизора
+        // Загрузка клиентов специалиста
         function loadSpecialistClients() {
             // Для упрощения будем считать, что все пользователи с ролью client - клиенты
             const users = Storage.get(STORAGE_KEYS.USERS) || [];
@@ -4773,7 +4107,7 @@
                 client.nextSession =
                     clientAppointments.length > 0
                         ? formatAppointmentDate(clientAppointments[0])
-                        : "Нет запланированных сессий";
+                        : "Нет запланированных сеансов";
 
                 // Загружаем заметки для клиента
                 client.notes = notesData.filter((n) => n.clientId === client.id);
@@ -4817,7 +4151,7 @@
                     });
                 });
 
-            // Переключение вкладок в кабинете супервизора
+            // Переключение вкладок в кабинете специалиста
             document
                 .querySelectorAll("#specialistDashboard .tab-btn")
                 .forEach((btn) => {
@@ -4835,7 +4169,7 @@
                     saveClientProfile();
                 });
 
-            // Сохранение профиля супервизора
+            // Сохранение профиля специалиста
             document
                 .getElementById("specialistProfileForm")
                 .addEventListener("submit", function (e) {
@@ -4854,9 +4188,61 @@
             // Фото клиента
             document.getElementById("clientProfilePhoto").addEventListener("change", handleClientPhotoUpload);
 
-            // Фото и видео супервизора
+            // Фото и видео специалиста
             document.getElementById("specialistProfilePhoto").addEventListener("change", handleSpecialistPhotoUpload);
             document.getElementById("specialistProfileVideo").addEventListener("change", handleSpecialistVideoUpload);
+        }
+
+        // Обработка фото клиента
+        function handleClientPhotoUpload(e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    currentUser.photo = e.target.result;
+                    document.getElementById("clientPhotoPreview").src = currentUser.photo;
+                    document.getElementById("clientPhotoPreview").style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Обработка фото специалиста
+        function handleSpecialistPhotoUpload(e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const specialists = Storage.get(STORAGE_KEYS.SPECIALISTS) || [];
+                    const specialist = specialists.find(s => s.userId === currentUser.id);
+                    if (specialist) {
+                        specialist.photo = e.target.result;
+                        Storage.set(STORAGE_KEYS.SPECIALISTS, specialists);
+                        document.getElementById("specialistPhotoPreview").src = specialist.photo;
+                        document.getElementById("specialistPhotoPreview").style.display = "block";
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Обработка видео специалиста
+        function handleSpecialistVideoUpload(e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('video/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const specialists = Storage.get(STORAGE_KEYS.SPECIALISTS) || [];
+                    const specialist = specialists.find(s => s.userId === currentUser.id);
+                    if (specialist) {
+                        specialist.video = e.target.result;
+                        Storage.set(STORAGE_KEYS.SPECIALISTS, specialists);
+                        document.getElementById("specialistVideoPreview").src = specialist.video;
+                        document.getElementById("specialistVideoPreview").style.display = "block";
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
         }
 
         // Сохранение профиля клиента
@@ -4894,7 +4280,7 @@
             }, 500);
         }
 
-        // Сохранение профиля супервизора
+        // Сохранение профиля специалиста
         function saveSpecialistProfile() {
             showLoader();
 
@@ -4928,7 +4314,7 @@
                 document.getElementById("specialistName").textContent = name;
             }
 
-            // Обновляем данные супервизора
+            // Обновляем данные специалиста
             const specialists = Storage.get(STORAGE_KEYS.SPECIALISTS) || [];
             const specialistIndex = specialists.findIndex(
                 (s) => s.userId === currentUser.id
@@ -4979,7 +4365,7 @@
             users.push(newUser);
             Storage.set(STORAGE_KEYS.USERS, users);
 
-            // Добавляем клиента в список клиентов супервизора
+            // Добавляем клиента в список клиентов специалиста
             const clients = Storage.get(STORAGE_KEYS.CLIENTS) || [];
             clients.push({
                 id: newUser.id,
@@ -5066,7 +4452,7 @@
             }
         }
 
-        // Переключение вкладок в кабинете супервизора
+        // Переключение вкладок в кабинете специалиста
         function switchSpecialistTab(tabId) {
             // Деактивировать все кнопки
             document
@@ -5102,7 +4488,7 @@
             }
         }
 
-        // Инициализация раздела с супервизорами
+        // Инициализация раздела со специалистами
         function initSpecialists() {
             renderSpecialists();
 
@@ -5113,7 +4499,7 @@
                     renderSpecialists();
                 });
 
-            // Обработка обзора супервизора
+            // Обработка обзора специалиста
             document
                 .getElementById("specialistsContainer")
                 .addEventListener("click", function (e) {
@@ -5125,7 +4511,7 @@
                 });
         }
 
-        // Открытие полного профиля супервизора в кабинете клиента
+        // Открытие полного профиля специалиста в кабинете клиента
         function openSpecialistFullProfileModal(specialistId) {
             const specialist = specialistsData.find(s => s.id == specialistId);
             if (!specialist) return;
@@ -5139,7 +4525,7 @@
                     <div class="review-rating">${getRatingStars(review.rating)}</div>
                     <p>${review.comment}</p>
                     <p><small>${review.date}</small></p>
-                  </div>
+                    </div>
                 `).join("");
             } else {
                 reviewsHTML = "<p>Отзывов пока нет.</p>";
@@ -5177,8 +4563,7 @@
             content.innerHTML = `
           <div class="profile-section">
             <h4><i class="fas fa-user"></i> Основная информация</h4>
-            <img src="${specialist.avatar || specialist.photo || 'https://randomuser.me/api/portraits/default.jpg'}" alt="${specialist.name
-            }" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 1rem 0;">
+            <img src="${specialist.avatar || specialist.photo || 'https://randomuser.me/api/portraits/default.jpg'}" alt="${specialist.name}" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 1rem 0;">
             <p><strong>Имя и фамилия:</strong> ${specialist.name}</p>
             <p><strong>Специализация:</strong> ${specialist.specialty || "Не указана"}</p>
             <p><strong>Опыт работы (лет):</strong> ${specialist.experience || 0}</p>
@@ -5193,7 +4578,7 @@
             <p>${specialist.description || "Не указано"}</p>
           </div>
           <div class="profile-section">
-            <h4><i class="fas fa-ruble-sign"></i> Цена за сессию</h4>
+            <h4><i class="fas fa-ruble-sign"></i> Цена за сеанс</h4>
             <p><strong>${specialist.price || 0} руб.</strong></p>
           </div>
           ${specialist.video ? `
@@ -5208,7 +4593,7 @@
             ${reviewFormHTML}
           </div>
           <div class="client-actions" style="margin-top: 2rem; text-align: center;">
-            <button class="btn btn-register" onclick="handleSpecialistBooking(${specialistId})" style="width: 100%; max-width: 300px;">Записаться на супервизию</button>
+            <button class="btn btn-register" onclick="handleSpecialistBooking(${specialistId})" style="width: 100%; max-width: 300px;">Записаться на консультацию</button>
           </div>
         `;
 
@@ -5247,7 +4632,7 @@
             reviewsData.push(newReview);
             Storage.set(STORAGE_KEYS.REVIEWS, reviewsData);
 
-            // Обновляем рейтинг супервизора
+            // Обновляем рейтинг специалиста
             updateSpecialistRating(specialistId);
 
             // Перезагружаем профиль
@@ -5257,7 +4642,7 @@
             showNotification("Отзыв оставлен!", "success");
         }
 
-        // Обновление среднего рейтинга супервизора
+        // Обновление среднего рейтинга специалиста
         function updateSpecialistRating(specialistId) {
             const specialistReviews = reviewsData.filter(r => r.specialistId == specialistId);
             if (specialistReviews.length > 0) {
@@ -5272,13 +4657,13 @@
             }
         }
 
-        // Обработка записи из профиля супервизора
+        // Обработка записи из профиля специалиста
         function handleSpecialistBooking(specialistId) {
             closeModal("specialistDetailModal");
             openClientBookingModal(specialistId);
         }
 
-        // Отображение супервизоров
+        // Отображение специалистов
         function renderSpecialists() {
             const container = document.getElementById("specialistsContainer");
             container.innerHTML = "";
@@ -5292,7 +4677,7 @@
                 .value.toLowerCase();
 
             const filteredSpecialists = specialistsData.filter((specialist) => {
-                // Фильтр по специальной
+                // Фильтр по специализации
                 if (specialtyFilter && specialist.specialty !== specialtyFilter) {
                     return false;
                 }
@@ -5333,7 +4718,7 @@
 
             if (filteredSpecialists.length === 0) {
                 container.innerHTML =
-                    '<p class="no-results">Супервизоры не найдены. Попробуйте изменить параметры фильтрации.</p>';
+                    '<p class="no-results">Специалисты не найдены. Попробуйте изменить параметры фильтрации.</p>';
                 return;
             }
 
@@ -5361,12 +4746,12 @@
                             </div>
                             <p>Опыт работы: ${specialist.experience} лет</p>
                             <p class="specialist-price">${specialist.price
-                    } руб. / сессия</p>
+                    } руб. / сеанс</p>
                         </div>
                         <p>${specialist.description}</p>
                     </div>
                     <div class="specialist-footer">
-                        <button class="btn btn-register" style="width: 100%">Записаться на супервизию</button>
+                        <button class="btn btn-register" style="width: 100%">Записаться на консультацию</button>
                     </div>
                 `;
 
@@ -5438,7 +4823,7 @@
                     updateBookingsFromAppointments();
 
                     closeModal("bookingModal");
-                    showNotification("Перенос записи отправлен! Ожидайте подтверждения от супервизора.", "success");
+                    showNotification("Перенос записи отправлен! Ожидайте подтверждения от специалиста.", "success");
                     renderAppointments();
                 }
             } else {
@@ -5472,7 +4857,7 @@
 
                 closeModal("bookingModal");
                 showNotification(
-                    "Запрос на запись отправлен! Ожидайте подтверждения от супервизора.",
+                    "Запрос на запись отправлен! Ожидайте подтверждения от специалиста.",
                     "success"
                 );
 
@@ -5480,9 +4865,9 @@
                 renderCalendar();
                 renderTimeSlots(day);
 
-                // Уведомляем супервизора (симуляция, в реальности - push или email)
+                // Уведомляем специалиста (симуляция, в реальности - push или email)
                 setTimeout(() => {
-                    showNotification("Супервизор уведомлен о вашем запросе", "info");
+                    showNotification("Специалист уведомлен о вашем запросе", "info");
                 }, 1000);
             }
 
@@ -5779,7 +5164,7 @@
 
         // Инициализация дашборда
         function initDashboard() {
-            // Загрузка данных клиентов для супервизора
+            // Загрузка данных клиентов для специалиста
             renderClients();
 
             // Загрузка записей для клиента
@@ -5814,7 +5199,7 @@
                 }
             });
 
-            // Обработка кнопок в записях супервизора
+            // Обработка кнопок в записях специалиста
             document.getElementById("allAppointmentsContainer").addEventListener("click", function (e) {
                 if (e.target.tagName === "BUTTON") {
                     const appId = e.target.getAttribute("data-app-id");
@@ -5833,7 +5218,7 @@
                         } else if (e.target.textContent === "Перенести") {
                             openRescheduleModal(appId);
                             return;
-                        } else if (e.target.textContent === "Сессия проведена") {
+                        } else if (e.target.textContent === "Занятие проведено") {
                             completeAppointment(appId);
                         }
                         Storage.set(STORAGE_KEYS.APPOINTMENTS, appointmentsData);
@@ -5850,7 +5235,7 @@
             const client = clientsData.find(c => c.id == clientId);
             if (!client) return;
 
-            document.getElementById("clientDetailTitle").textContent = `Профиль клиента`;
+            document.getElementById("clientDetailTitle").textContent = `Профиль: ${client.name}`;
             const content = document.getElementById("clientFullProfileContent");
             content.innerHTML = `
           <div class="client-info-grid">
@@ -5887,7 +5272,7 @@
             `).join("") : "<p>Заметок пока нет.</p>"}
           </div>
           <div class="client-actions">
-            <button class="btn btn-register" onclick="openBookClientModal(${client.id})">Записать на сессию</button>
+            <button class="btn btn-register" onclick="openBookClientModal(${client.id})">Записать на сеанс</button>
             <button class="btn btn-login" onclick="openNotesModal(${client.id})">Добавить заметку</button>
           </div>
         `;
@@ -5931,7 +5316,7 @@
                 notesData[noteIndex].revealedRequest = newRequest;
                 Storage.set(STORAGE_KEYS.NOTES, notesData);
 
-                // Обновляем модал
+                // Перерендер модала
                 const clientId = document.getElementById("notesForm").getAttribute("data-client-id");
                 renderNotes(clientId);
                 showNotification("Заметка обновлена", "success");
@@ -5956,7 +5341,7 @@
             }
         }
 
-        // Открытие оценки сессии
+        // Открытие оценки занятия
         function openRateSessionModal(appId) {
             document.getElementById("sessionAppId").value = appId;
             document.getElementById("sessionComment").value = "";
@@ -5982,7 +5367,7 @@
                 id: Date.now(),
                 userId: currentUser.id,
                 date: `${appointment.dateDay} ${getMonthName(appointment.dateMonth - 1)} ${appointment.dateYear}`,
-                content: `Оценка сессии с ${appointment.specialistName} (${appointment.time}): Проблема: ${problem || "Не указана"}. Выводы: ${conclusions || "Не указаны"}. Комментарий: ${comment}. Эмоции: ${emotions.join(", ") || "Не указаны"}`,
+                content: `Оценка занятия с ${appointment.specialistName} (${appointment.time}): Проблема: ${problem || "Не указана"}. Выводы: ${conclusions || "Не указаны"}. Комментарий: ${comment}. Эмоции: ${emotions.join(", ") || "Не указаны"}`,
                 createdAt: new Date().toISOString(),
             };
 
@@ -6019,7 +5404,7 @@
                 Storage.set(STORAGE_KEYS.APPOINTMENTS, appointmentsData);
                 updateBookingsFromAppointments();
                 renderAllAppointments();
-                showNotification("Сессия отмечена как проведенная", "success");
+                showNotification("Занятие отмечено как проведенное", "success");
             }
         }
 
@@ -6059,8 +5444,7 @@
                             <h3 class="client-name">${client.name}</h3>
                             <p class="client-next-session">Следующая сессия: ${client.nextSession
                     }</p>
-                            <p><strong>Проблема:</strong> ${client.helpNeeded || "Не указано"
-                    }</p>
+                            <p><strong>Проблема:</strong> ${client.helpNeeded || "Не указано"}</p>
                         </div>
                     </div>
                     <p><strong>Телефон:</strong> ${client.phone || "Не указан"
@@ -6091,7 +5475,7 @@
 
             if (userAppointments.length === 0) {
                 container.innerHTML =
-                    "<p>У вас нет записей на супервизию.</p>";
+                    "<p>У вас пока нет записей на консультации.</p>";
                 return;
             }
 
@@ -6105,8 +5489,8 @@
                 let actions = "";
                 if (appointment.status === "pending") {
                     if (appointment.creatorRole === "specialist") {
-                        // Запись от супервизора, клиент подтверждает
-                        statusText = '<span style="color: #f39c12;">Предложена супервизором</span>';
+                        // Запись от специалиста, клиент подтверждает
+                        statusText = '<span style="color: #f39c12;">Предложена психологом</span>';
                         actions = `
                 <div class="client-actions">
                   <button class="btn btn-register confirm-btn" data-app-id="${appointment.id}">Подтвердить</button>
@@ -6114,7 +5498,7 @@
                 </div>
               `;
                     } else {
-                        // Запись от клиента, ждет супервизора
+                        // Запись от клиента, ждет специалиста
                         statusText = '<span style="color: #f39c12;">Ожидание подтверждения</span>';
                         actions = `
                 <div class="client-actions">
@@ -6135,7 +5519,7 @@
                 }
 
                 appointmentElement.innerHTML = `
-                    <h3 class="help-title"><i class="fas fa-calendar-check"></i> Супервизия у ${appointment.specialistName
+                    <h3 class="help-title"><i class="fas fa-calendar-check"></i> Консультация у ${appointment.specialistName
                     }</h3>
                     <p><strong>Дата и время:</strong> ${appointment.dateDay
                     } ${getMonthName(appointment.dateMonth - 1)} ${appointment.dateYear
@@ -6148,14 +5532,14 @@
             });
         }
 
-        // Отображение всех записей супервизора с сортировкой и группировкой по дням
+        // Отображение всех записей специалиста с сортировкой и группировкой по дням
         function renderAllAppointments() {
             const container = document.getElementById("allAppointmentsContainer");
             container.innerHTML = "";
 
             const mySpecialist = specialistsData.find(s => s.userId === currentUser.id);
             if (!mySpecialist) {
-                container.innerHTML = "<p>Ошибка: супервизор не найден.</p>";
+                container.innerHTML = "<p>Ошибка: специалист не найден.</p>";
                 return;
             }
 
@@ -6192,7 +5576,7 @@
                     if (app.status === "cancelled") {
                         statusText = '<span style="color: var(--error);">Отменено</span>';
                         actions = "";
-                    }else if (app.status === "completed") {
+                    } else if (app.status === "completed") {
                         statusText = '<span style="color: var(--success);">Проведено</span>';
                         actions = "";
                     } else {
@@ -6220,7 +5604,7 @@
                 <div class="client-actions">
                   <button class="btn btn-login reschedule-btn" data-app-id="${app.id}">Перенести</button>
                   <button class="btn btn-register cancel-btn" data-app-id="${app.id}">Отменить</button>
-                  <button class="btn btn-register complete-btn" data-app-id="${app.id}">Сессия проведена</button>
+                  <button class="btn btn-register complete-btn" data-app-id="${app.id}">Занятие проведено</button>
                 </div>
               `;
                     } else if (app.status === "pending") {
@@ -6234,7 +5618,7 @@
                   </div>
                 `;
                         } else {
-                            // Запись от супервизора, ждет клиента
+                            // Запись от специалиста, ждет клиента
                             statusText = '<span style="color: #f39c12;">Ожидание подтверждения клиента</span>';
                             actions = `
                   <div class="client-actions">
@@ -6243,7 +5627,7 @@
                 `;
                         }
                     } else if (app.status === "completed") {
-                        statusText = '<span style="color: var(--success);">Проведена</span>';
+                        statusText = '<span style="color: var(--success);">Проведено</span>';
                         actions = "";
                     } else if (app.status === "cancelled") {
                         statusText = '<span style="color: var(--error);">Отменена</span>';
@@ -6395,7 +5779,7 @@
 
             const userJournalEntries = journalData.filter((j) => j.userId === currentUser.id).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-           if (userJournalEntries.length === 0) {
+            if (userJournalEntries.length === 0) {
                 container.innerHTML = "<p>Записей пока нет.</p>";
                 return;
             }
@@ -6414,160 +5798,7 @@
             });
         }
 
-        // Инициализация заметок
-        function initNotes() {
-            // Добавление заметки
-            document
-                .getElementById("notesForm")
-                .addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    const clientId = this.getAttribute("data-client-id");
-                    const content = document.getElementById("noteContent").value;
-                    const problem = document.querySelector(".problem-option.selected").dataset.problem;
-                    const request = document.querySelector(".request-option.selected").dataset.request;
-
-                    if (content.trim() === "") return;
-
-                    // Создаем новую заметку
-                    const newNote = {
-                        id: Date.now(),
-                        clientId: parseInt(clientId),
-                        specialistId: currentUser.id,
-                        date: new Date().toLocaleDateString("ru-RU"),
-                        content,
-                        problemCameWith: problem,
-                        revealedRequest: request,
-                        createdAt: new Date().toISOString(),
-                    };
-
-                    // Сохраняем заметку
-                    const notes = Storage.get(STORAGE_KEYS.NOTES) || [];
-                    notes.push(newNote);
-                    Storage.set(STORAGE_KEYS.NOTES, notes);
-                    notesData = Storage.get(STORAGE_KEYS.NOTES) || []; // Reload global
-
-                    document.getElementById("noteContent").value = "";
-                    document
-                        .querySelectorAll(".problem-option")
-                        .forEach((el) => el.classList.remove("selected"));
-                    document
-                        .querySelectorAll(".request-option")
-                        .forEach((el) => el.classList.remove("selected"));
-
-                    renderNotes(clientId);
-                    loadSpecialistClients();
-                    renderClients();
-                    showNotification("Заметка добавлена", "success");
-                });
-        }
-
-        // Открытие модального окна заметок
-        function openNotesModal(clientId) {
-            const client = clientsData.find((c) => c.id == clientId);
-            if (client) {
-                document.getElementById(
-                    "notesTitle"
-                ).textContent = `Заметки для ${client.name}`;
-                document
-                    .getElementById("notesForm")
-                    .setAttribute("data-client-id", clientId);
-                renderNotes(clientId);
-                openModal("notesModal");
-            }
-        }
-
-        // Отображение заметок
-        function renderNotes(clientId) {
-            const container = document.getElementById("notesList");
-            container.innerHTML = "";
-
-            const clientNotes = notesData.filter((n) => n.clientId == clientId);
-
-            if (clientNotes.length === 0) {
-                container.innerHTML = "<p>Заметок пока нет.</p>";
-                return;
-            }
-
-            clientNotes.forEach((note, index) => {
-                const entry = document.createElement("div");
-                entry.className = "note-entry";
-                entry.style.animationDelay = `${index * 0.1}s`;
-                entry.setAttribute("data-note-id", note.id);
-
-                entry.innerHTML = `
-                    <div class="note-date">${note.date}</div>
-                    <div class="note-content">${note.content}</div>
-                    <p><strong>Проблема:</strong> ${note.problemCameWith || "Не указано"}</p>
-                    <p><strong>Запрос:</strong> ${note.revealedRequest || "Не указано"}</p>
-                    <div class="note-actions">
-                      <button class="note-edit-btn" onclick="editNote(${note.id})">Редактировать</button>
-                      <button class="note-delete-btn" onclick="deleteNote(${note.id})">Удалить</button>
-                    </div>
-                `;
-
-                container.appendChild(entry);
-            });
-        }
-
-        // Инициализация дневника клиента
-        function initJournal() {
-            document
-                .getElementById("journalForm")
-                .addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    const content = document.getElementById("journalContent").value;
-
-                    if (content.trim() === "") return;
-
-                    // Создаем новую запись в дневнике
-                    const newJournalEntry = {
-                        id: Date.now(),
-                        userId: currentUser.id,
-                        date: new Date().toLocaleDateString("ru-RU"),
-                        content,
-                        createdAt: new Date().toISOString(),
-                    };
-
-                    // Сохраняем запись
-                    const journals = Storage.get(STORAGE_KEYS.JOURNALS) || [];
-                    journals.push(newJournalEntry);
-                    Storage.set(STORAGE_KEYS.JOURNALS, journals);
-                    journalData = Storage.get(STORAGE_KEYS.JOURNALS) || []; // Reload global
-
-                    document.getElementById("journalContent").value = "";
-                    loadUserJournal();
-                    renderJournal();
-                    showNotification("Запись добавлена в дневник", "success");
-                });
-        }
-
-        // Отображение дневника
-        function renderJournal() {
-            const container = document.getElementById("journalEntries");
-            container.innerHTML = "";
-
-            const userJournalEntries = journalData.filter((j) => j.userId === currentUser.id).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-
-           if (userJournalEntries.length === 0) {
-                container.innerHTML = "<p>Записей пока нет.</p>";
-                return;
-            }
-
-            userJournalEntries.forEach((entry, index) => {
-                const journalEntry = document.createElement("div");
-                journalEntry.className = "journal-entry animate";
-                journalEntry.style.animationDelay = `${index * 0.1}s`;
-
-                journalEntry.innerHTML = `
-                    <div class="journal-date">${entry.date}</div>
-                    <div class="journal-content">${entry.content}</div>
-                `;
-
-                container.appendChild(journalEntry);
-            });
-        }
-
-        // Инициализация всех записей супервизора
+        // Инициализация всех записей специалиста
         function initSpecialistAppointments() {
             document.getElementById("allAppointmentsContainer").addEventListener("click", function (e) {
                 if (e.target.tagName === "BUTTON") {
@@ -6587,7 +5818,7 @@
                         } else if (e.target.textContent === "Перенести") {
                             openRescheduleModal(appId);
                             return;
-                        } else if (e.target.textContent === "Сессия проведена") {
+                        } else if (e.target.textContent === "Занятие проведено") {
                             completeAppointment(appId);
                         }
                         Storage.set(STORAGE_KEYS.APPOINTMENTS, appointmentsData);
@@ -6648,7 +5879,7 @@
             const specialist = specialistsData.find((s) => s.userId === currentUser.id);
 
             if (!client || !specialist) {
-                showNotification("Ошибка: клиент или супервизор не найден", "error");
+                showNotification("Ошибка: клиент или специалист не найден", "error");
                 return;
             }
 
@@ -6678,7 +5909,7 @@
             updateBookingsFromAppointments();
 
             closeModal("bookSpecificClientModal");
-            showNotification("Клиент записан на сессию (ожидает подтверждения)", "success");
+            showNotification("Клиент записан на консультацию (ожидает подтверждения)", "success");
             renderCalendar();
         }
 
@@ -6746,7 +5977,7 @@
             renderCalendar();
         }
 
-        // Инициализация записи клиента супервизором
+        // Инициализация записи клиента специалистом
         function initBookClient() {
             let bookCurrentMonth = new Date().getMonth();
             let bookCurrentYear = new Date().getFullYear();
@@ -7165,7 +6396,7 @@
                 const summaryElement = document.getElementById("bookingSummary");
                 summaryElement.innerHTML = `
                 <div class="booking-detail">
-                    <strong>Супервизор:</strong> <span>${specialist.name}</span>
+                    <strong>Специалист:</strong> <span>${specialist.name}</span>
                 </div>
                 <div class="booking-detail">
                     <strong>Дата:</strong> <span>${selectedDay} ${getMonthName(clientCurrentMonth)} ${clientCurrentYear}</span>
@@ -7178,7 +6409,7 @@
                 </div>
             `;
 
-                // Сохраняем данные
+                // Сохраняем информацию о выбранной записи
                 summaryElement.setAttribute("data-specialist-id", specialistId);
                 summaryElement.setAttribute("data-day", selectedDay);
                 summaryElement.setAttribute("data-time", selectedTime);
@@ -7191,7 +6422,7 @@
             });
         }
 
-        // Инициализация модала переноса для супервизора
+        // Инициализация модала переноса для специалиста
         function initRescheduleModal() {
             let rescheduleCurrentMonth = new Date().getMonth();
             let rescheduleCurrentYear = new Date().getFullYear();
@@ -7209,7 +6440,7 @@
                     "Июнь",
                     "Июль",
                     "Август",
-                    "Сентября",
+                    "Сентябрь",
                     "Октябрь",
                     "Ноябрь",
                     "Декабрь",
@@ -7395,58 +6626,6 @@
                 document.getElementById("rescheduleModal").setAttribute("data-specialist-id", appointment.specialistId);
                 openModal("rescheduleModal");
                 renderRescheduleCalendar(appointment.specialistId);
-            }
-        }
-
-        // Обработка фото клиента
-        function handleClientPhotoUpload(e) {
-            const file = e.target.files[0];
-            if (file && file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    currentUser.photo = e.target.result;
-                    document.getElementById("clientPhotoPreview").src = currentUser.photo;
-                    document.getElementById("clientPhotoPreview").style.display = "block";
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // Обработка фото супервизора
-        function handleSpecialistPhotoUpload(e) {
-            const file = e.target.files[0];
-            if (file && file.type.startsWith('image/')) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const specialists = Storage.get(STORAGE_KEYS.SPECIALISTS) || [];
-                    const specialist = specialists.find(s => s.userId === currentUser.id);
-                    if (specialist) {
-                        specialist.photo = e.target.result;
-                        Storage.set(STORAGE_KEYS.SPECIALISTS, specialists);
-                        document.getElementById("specialistPhotoPreview").src = specialist.photo;
-                        document.getElementById("specialistPhotoPreview").style.display = "block";
-                    }
-                };
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // Обработка видео супервизора
-        function handleSpecialistVideoUpload(e) {
-            const file = e.target.files[0];
-            if (file && file.type.startsWith('video/')) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    const specialists = Storage.get(STORAGE_KEYS.SPECIALISTS) || [];
-                    const specialist = specialists.find(s => s.userId === currentUser.id);
-                    if (specialist) {
-                        specialist.video = e.target.result;
-                        Storage.set(STORAGE_KEYS.SPECIALISTS, specialists);
-                        document.getElementById("specialistVideoPreview").src = specialist.video;
-                        document.getElementById("specialistVideoPreview").style.display = "block";
-                    }
-                };
-                reader.readAsDataURL(file);
             }
         }
     </script>
